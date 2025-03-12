@@ -84,7 +84,9 @@ export function ClientTeams() {
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <CardTitle className="text-slate-900">{team.name}</CardTitle>
-              <Badge variant={team.status === "existing" ? "success" : "default"}>
+              <Badge 
+                variant={team.status === "existing" ? "outline" : "success"}
+              >
                 {team.status === "existing" ? "Existing" : "New"}
               </Badge>
             </div>
