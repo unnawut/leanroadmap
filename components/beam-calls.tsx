@@ -16,37 +16,28 @@ interface BeamCall {
 const beamCallsData: BeamCall[] = [
   {
     id: "call-1",
-    title: "Beam Chain R&D Call #1: Post-Quantum Cryptography",
-    date: "March 15, 2025",
+    title: "Beam Call #1: Social Layer Updates",
+    date: "February 14, 2025",
     summary:
-      "Discussion of post-quantum cryptography approaches including Poseidon 2, Winternitz signatures, and XMSS implementation progress.",
+      "The kickoff call covering social layer progress, funding structures, legal updates, introductions of research specialists and client teams, and coordinator presentations",
     thumbnail: "/placeholder.svg?height=180&width=320",
-    youtubeUrl: "#",
+    youtubeUrl: "https://www.youtube.com/watch?v=sSx6juIu4AI",
   },
   {
     id: "call-2",
-    title: "Beam Chain R&D Call #2: ZKVM Performance Benchmarks",
+    title: "Beam Call #2: Technical Layer Updates",
     date: "February 28, 2025",
     summary:
-      "Presentation of benchmarking results for various ZKVMs including Plancky3, Blake3, and Keccak implementations.",
+      "Technical updates on post-quantum cryptography solutions, featuring technical presentations from researchers on signature schemes, hash functions, minimal zkVMs, and formal verification.",
     thumbnail: "/placeholder.svg?height=180&width=320",
-    youtubeUrl: "#",
+    youtubeUrl: "https://www.youtube.com/watch?v=BtYb_guRq78",
   },
   {
     id: "call-3",
-    title: "Beam Chain R&D Call #3: Cryptanalysis Initiative Update",
-    date: "February 15, 2025",
+    title: "Beam Call #3: P2P Networking",
+    date: "April 4, 2025",
     summary:
-      "Update on the Cryptanalysis Initiative with Dmitry Khovratovich covering bounties, research grants, and workshop results.",
-    thumbnail: "/placeholder.svg?height=180&width=320",
-    youtubeUrl: "#",
-  },
-  {
-    id: "call-4",
-    title: "Beam Chain R&D Call #4: Formal Verification Progress",
-    date: "January 30, 2025",
-    summary:
-      "Alex Hicks presents progress on the ZKVM formal verification project using Lean 4 framework and executable specifications.",
+      "TBD",
     thumbnail: "/placeholder.svg?height=180&width=320",
     youtubeUrl: "#",
   },
@@ -79,17 +70,18 @@ export function BeamCalls() {
             <p className="text-sm text-slate-600">{call.summary}</p>
           </CardContent>
           <CardFooter className="pt-0">
-            <Link
-              href={call.youtubeUrl}
-              className="text-sm font-medium text-slate-700 hover:text-slate-900 flex items-center gap-1"
-              target="_blank"
-            >
-              Watch on YouTube <ExternalLink className="h-3.5 w-3.5" />
-            </Link>
+            { call.youtubeUrl != "#" &&
+              <Link
+                href={call.youtubeUrl}
+                className="text-sm font-medium text-slate-700 hover:text-slate-900 flex items-center gap-1"
+                target="_blank"
+              >
+                Watch on YouTube <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+            }
           </CardFooter>
         </Card>
       ))}
     </div>
   )
 }
-
