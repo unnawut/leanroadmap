@@ -7,6 +7,7 @@ import { ResearchTrackCard } from "@/components/research-track-card"
 import { ClientTeams } from "@/components/client-teams"
 import { BeamCalls } from "@/components/beam-calls"
 import { ResearchData } from "@/lib/data"
+import { Timeline } from "@/components/timeline"
 
 export function ResearchDashboard() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -38,6 +39,11 @@ export function ResearchDashboard() {
           </div>
         </div>
       </header>
+
+      <section>
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Timeline</h2>
+        <Timeline />
+      </section>
 
       <section>
         <div className="flex justify-between items-center mb-6">
