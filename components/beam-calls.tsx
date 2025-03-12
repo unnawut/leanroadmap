@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { ExternalLink, Play } from "lucide-react"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/primitives"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -54,7 +54,7 @@ const beamCallsData: BeamCall[] = [
 
 export function BeamCalls() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {beamCallsData.map((call) => (
         <Card key={call.id} className="bg-white border-slate-200 overflow-hidden">
           <div className="relative">

@@ -2,23 +2,43 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ExternalLink, Plus, Minus } from "lucide-react"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle, Badge, Separator } from "@/components/ui/primitives"
 import type { ResearchTrack } from "@/lib/data"
 import Link from "next/link"
 
 interface ResearchTrackCardProps {
   track: ResearchTrack
+  isExpanded: boolean
+  onToggle: (expanded: boolean) => void
 }
 
-export function ResearchTrackCard({ track }: ResearchTrackCardProps) {
-  const [isOpen, setIsOpen] = useState(false) // Closed by default
+export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrackCardProps) {
+  const [isOpen, setIsOpen] = useState(isExpanded) // Start with parent's expanded state
+
+  // Update local state when parent state changes
+  useEffect(() => {
+    setIsOpen(isExpanded)
+  }, [isExpanded])
 
   // Extract color for progress bar
   const progressColor = track.colorClass.includes("purple")
+    ? "bg-purple-500"
+    : track.colorClass.includes("blue")
+      ? "bg-blue-500"
+      : track.colorClass.includes("green")
+        ? "bg-green-500"
+        : track.colorClass.includes("amber")
+          ? "bg-amber-500"
+          : track.colorClass.includes("red")
+            ? "bg-red-500"
+            : track.colorClass.includes("indigo")
+              ? "bg-indigo-500"
+              : "bg-primary"
+
+  // Get background color class for icon container
+  const iconBgColor = track.colorClass.includes("purple")
     ? "bg-purple-500"
     : track.colorClass.includes("blue")
       ? "bg-blue-500"
@@ -37,10 +57,16 @@ export function ResearchTrackCard({ track }: ResearchTrackCardProps) {
     e.stopPropagation()
   }
 
+  const handleToggle = () => {
+    const newState = !isOpen
+    setIsOpen(newState)
+    onToggle(newState)
+  }
+
   return (
     <Card
       className="bg-white border-slate-200 hover:bg-slate-50 transition-colors h-full flex flex-col cursor-pointer relative"
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={handleToggle}
     >
       <div className="absolute top-3 right-3">
         {isOpen ? <Minus className="h-4 w-4 text-slate-400" /> : <Plus className="h-4 w-4 text-slate-400" />}
@@ -48,7 +74,7 @@ export function ResearchTrackCard({ track }: ResearchTrackCardProps) {
 
       <CardHeader className="pb-2">
         <div className="flex items-center gap-2">
-          <div className={`p-2 rounded-lg ${track.colorClass}`}>{track.icon}</div>
+          <div className={`p-2 rounded-lg ${iconBgColor} text-white`}>{track.icon}</div>
           <CardTitle className="text-slate-900">{track.title}</CardTitle>
         </div>
       </CardHeader>
