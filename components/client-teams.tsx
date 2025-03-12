@@ -16,6 +16,94 @@ interface ClientTeam {
 
 const clientTeamsData: ClientTeam[] = [
   {
+    id: "ream",
+    name: "Ream",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "zeam",
+    name: "Zeam",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "quadrivium",
+    name: "Quadrivium",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "nethermind",
+    name: "Nethermind",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "lantern",
+    name: "Lantern",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "lambdaclass",
+    name: "LambdaClass",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "colibri",
+    name: "Colibri",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "afream",
+    name: "Afream",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "new",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
     id: "lodestar",
     name: "Lodestar",
     description:
@@ -49,25 +137,34 @@ const clientTeamsData: ClientTeam[] = [
       twitter: "https://twitter.com/sigp_io",
       github: "https://github.com/sigp/lighthouse",
     },
-  },
+  },,
   {
-    id: "ream",
-    name: "Ream",
-    description:
-      "A next-generation Beam Chain client focused on post-quantum cryptography and optimized for resource-constrained environments.",
-    status: "new",
+    id: "prysm",
+    name: "Prysm",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "existing",
     links: {
       website: "#",
       twitter: "#",
       github: "#",
     },
-  },
+  },,
   {
-    id: "zeam",
-    name: "Zeam",
-    description:
-      "A zero-knowledge focused Beam Chain client with built-in support for recursive SNARKs and advanced privacy features.",
-    status: "new",
+    id: "nimbus",
+    name: "Nimbus",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "existing",
+    links: {
+      website: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },,
+  {
+    id: "grandine",
+    name: "Grandine",
+    description: "Lorem ipsum dolor sit amet.",
+    status: "existing",
     links: {
       website: "#",
       twitter: "#",
