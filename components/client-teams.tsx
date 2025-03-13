@@ -1,177 +1,7 @@
-import { ExternalLink, Twitter, Github } from "lucide-react"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, Badge } from "@/components/ui/primitives"
+import { Card, CardHeader, CardTitle, CardContent, CardFooter, Badge } from "@/components/ui/primitives"
 import Link from "next/link"
-
-interface ClientTeam {
-  id: string
-  name: string
-  description: string
-  status: "existing" | "new"
-  links: {
-    website?: string
-    twitter?: string
-    github?: string
-  }
-}
-
-const clientTeamsData: ClientTeam[] = [
-  {
-    id: "ream",
-    name: "Ream",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "zeam",
-    name: "Zeam",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "quadrivium",
-    name: "Quadrivium",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "nethermind",
-    name: "Nethermind",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "lantern",
-    name: "Lantern",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "lambdaclass",
-    name: "LambdaClass",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "colibri",
-    name: "Colibri",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "afream",
-    name: "Afream",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "new",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-  {
-    id: "lodestar",
-    name: "Lodestar",
-    description:
-      "A TypeScript implementation of the Ethereum consensus client focused on modularity and extensibility.",
-    status: "existing",
-    links: {
-      website: "https://lodestar.chainsafe.io/",
-      twitter: "https://twitter.com/lodestar_eth",
-      github: "https://github.com/ChainSafe/lodestar",
-    },
-  },
-  {
-    id: "teku",
-    name: "Teku",
-    description:
-      "An enterprise-grade Ethereum consensus client built in Java by ConsenSys, designed for institutional staking.",
-    status: "existing",
-    links: {
-      website: "https://consensys.io/teku",
-      twitter: "https://twitter.com/Teku_ConsenSys",
-      github: "https://github.com/ConsenSys/teku",
-    },
-  },
-  {
-    id: "lighthouse",
-    name: "Lighthouse",
-    description: "A high-performance Ethereum consensus client built in Rust, focused on security and efficiency.",
-    status: "existing",
-    links: {
-      website: "https://lighthouse.sigmaprime.io/",
-      twitter: "https://twitter.com/sigp_io",
-      github: "https://github.com/sigp/lighthouse",
-    },
-  },,
-  {
-    id: "prysm",
-    name: "Prysm",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "existing",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },,
-  {
-    id: "nimbus",
-    name: "Nimbus",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "existing",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },,
-  {
-    id: "grandine",
-    name: "Grandine",
-    description: "Lorem ipsum dolor sit amet.",
-    status: "existing",
-    links: {
-      website: "#",
-      twitter: "#",
-      github: "#",
-    },
-  },
-]
+import { ExternalLink, Twitter, Github } from "lucide-react"
+import { ClientTeam, clientTeamsData } from "@/lib/client-teams"
 
 export function ClientTeams() {
   return (
@@ -184,7 +14,7 @@ export function ClientTeams() {
               <Badge 
                 variant={team.status === "existing" ? "outline" : "success"}
               >
-                {team.status === "existing" ? "Existing" : "New"}
+                {team.status === "existing" ? "💪 Existing" : "✨ New"}
               </Badge>
             </div>
           </CardHeader>
@@ -228,4 +58,3 @@ export function ClientTeams() {
     </div>
   )
 }
-
