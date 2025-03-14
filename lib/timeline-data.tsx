@@ -14,7 +14,7 @@ export const timelineData: TimelineItem[] = [
       id: "pilling",
       title: "Pilling",
       startDate: { year: 2024, month: 1 }, // Starts at beginning of 2024
-      endDate: { year: 2025, month: 1 }, // Ends at beginning of 2025
+      endDate: { year: 2025, month: 3 }, // Ends at beginning of 2025
       icon: <Pill className="h-5 w-5" />,
       color: "bg-slate-300",
     },
@@ -22,7 +22,7 @@ export const timelineData: TimelineItem[] = [
       id: "speccing",
       title: "Speccing",
       startDate: { year: 2025, month: 1 }, // Starts at beginning of 2025
-      endDate: { year: 2026, month: 1 }, // Ends at beginning of 2026
+      endDate: { year: 2026, month: 5 }, // Ends at beginning of 2026
       icon: <Beaker className="h-5 w-5" />,
       color: "bg-amber-500",
     },
@@ -30,7 +30,7 @@ export const timelineData: TimelineItem[] = [
       id: "building",
       title: "Building",
       startDate: { year: 2026, month: 1 }, // Starts at beginning of 2026
-      endDate: { year: 2028, month: 1 }, // Ends at beginning of 2028
+      endDate: { year: 2027, month: 11 }, // Ends at beginning of 2028
       icon: <Hammer className="h-5 w-5" />,
       color: "bg-blue-500",
     },

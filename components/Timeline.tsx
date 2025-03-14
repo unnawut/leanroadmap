@@ -13,6 +13,17 @@ const getGridPosition = (date: { year: number; month: number }) => {
   return (totalMonths / TIMELINE_CONFIG.TOTAL_MONTHS) * 100
 }
 
+const getGridRange = (startDate: { year: number; month: number }, endDate: { year: number; month: number }) => {
+  const startMonths = getMonthsSinceStart(startDate)
+  const endMonths = getMonthsSinceStart(endDate) + 1
+
+  return {
+    // Adding 12 because our component renders the entire of 2030 which is not part of the timeline
+    startOffset: (startMonths / (TIMELINE_CONFIG.TOTAL_MONTHS + 12)) * 100,
+    endOffset: (endMonths / (TIMELINE_CONFIG.TOTAL_MONTHS + 12)) * 100
+  }
+}
+
 export function Timeline() {
   const now = getCurrentDate()
   const CURRENT_DATE = { 
@@ -24,11 +35,11 @@ export function Timeline() {
   return (
     <Card className="bg-white border-slate-200 p-4">
       <div className="relative px-8 py-4">
-        <div className="relative">
+        <div className="relative -mr-44">
           {/* Year marker lines */}
           <div className="absolute inset-0">
             <div className="grid grid-cols-7 h-full">
-              {Array.from({ length: TIMELINE_CONFIG.TOTAL_MONTHS / 12 + 1 }).map((_, index) => (
+              {Array.from({ length: TIMELINE_CONFIG.END_YEAR - TIMELINE_CONFIG.START_YEAR + 1 }).map((_, index) => (
                 <div key={index} className="relative h-full">
                   <div className="absolute top-0 bottom-0 -left-3 w-0.5 bg-slate-300" />
                 </div>
@@ -36,12 +47,9 @@ export function Timeline() {
             </div>
           </div>
 
-          {/* Right edge line */}
-          <div className="absolute top-0 bottom-0 right-0 w-0.5 bg-slate-300" />
-
           {/* Year labels */}
           <div className="grid grid-cols-7 mb-16 relative">
-            {Array.from({ length: TIMELINE_CONFIG.TOTAL_MONTHS / 12 + 1 }).map((_, index) => (
+            {Array.from({ length: TIMELINE_CONFIG.END_YEAR - TIMELINE_CONFIG.START_YEAR + 1 }).map((_, index) => (
               <div key={index} className="text-sm font-medium text-slate-900">
                 {TIMELINE_CONFIG.START_YEAR + index}
               </div>
@@ -69,9 +77,10 @@ export function Timeline() {
           {/* Timeline bars */}
           <div className="relative h-56">
             {timelineData.map((item, index) => {
-              const startOffset = getGridPosition(item.startDate)
-              const endOffset = getGridPosition(item.endDate)
+              const { startOffset, endOffset } = getGridRange(item.startDate, item.endDate)
               const width = endOffset - startOffset
+
+              console.log(item.title, item.startDate, item.endDate,startOffset, endOffset, width)
 
               return (
                 <div
