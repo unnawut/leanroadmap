@@ -19,7 +19,7 @@ export function BeamCalls() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {beamCallsData.map((call) => (
-        <Card key={call.id} className="bg-white border-slate-200 overflow-hidden">
+        <Card key={call.id} className={`bg-white border-slate-200 overflow-hidden ${call.status === 'unscheduled' ? 'filter brightness-100 opacity-25' : ''}`}>
           <div className="relative">
             {call.youtubeUrl !== "#" && getYoutubeVideoId(call.youtubeUrl) ? (
               <div className="w-full h-48">
@@ -53,7 +53,14 @@ export function BeamCalls() {
             )}
           </div>
           <CardContent className="pt-4">
-            <Link href={call.youtubeUrl} target="_blank" className="font-semibold text-lg mb-1 text-slate-900 hover:text-blue-600">{call.title}</Link>
+            {call.youtubeUrl !== "#" ? (
+              <Link href={call.youtubeUrl} target="_blank" className="font-semibold text-lg mb-1 text-slate-900 hover:text-blue-600">{call.title}</Link>
+            ) : (
+              <div className="flex items-center">
+                <p className="font-semibold text-lg mb-1 text-slate-900">{call.title}</p>
+                { call.status === "upcoming" && <span className="ml-2 text-xs bg-red-500 text-white rounded-md px-2 py-1">Soon!</span> }
+              </div>
+            )}
             <p className="text-xs text-slate-500 mb-2">{call.date}</p>
             <p className="text-sm text-slate-600">{call.summary}</p>
           </CardContent>
@@ -67,7 +74,7 @@ export function BeamCalls() {
                 Watch on YouTube <ExternalLink className="h-3.5 w-3.5" />
               </Link>
             : 
-              <p className="text-sm text-slate-700">Recording not yet available.</p>
+              <p className="text-sm text-slate-400">Recording not yet available.</p>
             }
           </CardFooter>
         </Card>
