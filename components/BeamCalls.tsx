@@ -3,7 +3,7 @@ import { ExternalLink, Play } from "lucide-react"
 import { Card, CardContent, CardFooter } from "@/components/ui/primitives"
 import { Button } from "@/components/ui/Button"
 import Link from "next/link"
-import { BeamCall, beamCallsData } from "@/lib/beam-calls"
+import { BeamCall, beamCallsData } from "@/lib/beam-calls-data"
 
 // Helper function to extract YouTube video ID from URL
 function getYoutubeVideoId(url: string): string | null {

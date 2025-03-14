@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/primitives"
 import { getCurrentDate } from "@/lib/utils"
-import { timelineData, TIMELINE_CONFIG } from "@/lib/data"
+import { timelineData, TIMELINE_CONFIG } from "@/lib/timeline-data"
 
 // Helper function to convert date to months since start
 const getMonthsSinceStart = (date: { year: number; month: number }) => {

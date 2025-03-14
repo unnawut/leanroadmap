@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Search, ChevronUp, ChevronDown } from "lucide-react"
 import { Input } from "@/components/ui/primitives"
 import { ResearchTrackCard } from "@/components/ResearchTrackCard"
-import { ResearchData } from "@/lib/research-tracks"
+import { researchTracksData } from "@/lib/research-tracks-data"
 
 export function ResearchTracks() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -12,9 +12,9 @@ export function ResearchTracks() {
   const [allExpanded, setAllExpanded] = useState(true) // Start with all expanded
 
   // Get unique tags from all research tracks
-  const allTags = Array.from(new Set(ResearchData.flatMap(track => track.tags))).sort()
+  const allTags = Array.from(new Set(researchTracksData.flatMap(track => track.tags))).sort()
 
-  const filteredTracks = ResearchData.filter(
+  const filteredTracks = researchTracksData.filter(
     (track) =>
       (searchTerm === "" || 
        track.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

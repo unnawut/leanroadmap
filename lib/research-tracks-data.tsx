@@ -27,7 +27,7 @@ export interface Resource {
   type: "paper" | "code" | "presentation" | "website"
 }
 
-export const ResearchData: ResearchTrack[] = [
+export const researchTracksData: ResearchTrack[] = [
   {
     id: "post-quantum",
     title: "Post-Quantum Cryptography",
