@@ -30,13 +30,13 @@ export function Dashboard() {
       </section>
 
       <section>
-        <h2>Beam Calls</h2>
-        <BeamCalls />
+        <h2>Client Teams</h2>
+        <ClientTeams />
       </section>
 
       <section>
-        <h2>Client Teams</h2>
-        <ClientTeams />
+        <h2>Beam Calls</h2>
+        <BeamCalls />
       </section>
 
       <Footer />
