@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { ExternalLink, Plus, Minus } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, Badge, Separator } from "@/components/ui/primitives"
-import type { ResearchTrack } from "@/lib/data"
+import type { ResearchTrack } from "@/lib/research-tracks-data"
 import Link from "next/link"
 
 interface ResearchTrackCardProps {
@@ -131,6 +131,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
               </div>
             </div>
           </div>
+          <p className="text-sm text-slate-600 mt-2">Lead: {track.lead}</p>
         </CardContent>
 
         <CardFooter className="pt-2 border-t border-slate-100">
