@@ -14,6 +14,46 @@ interface ResearchTrackCardProps {
   onToggle: (expanded: boolean) => void
 }
 
+// Color mapping for different themes
+const colorMap = {
+  purple: {
+    bg: "bg-purple-100",
+    text: "text-purple-600",
+    progressBg: "bg-purple-500"
+  },
+  blue: {
+    bg: "bg-blue-100",
+    text: "text-blue-600",
+    progressBg: "bg-blue-500"
+  },
+  green: {
+    bg: "bg-green-100",
+    text: "text-green-600",
+    progressBg: "bg-green-500"
+  },
+  amber: {
+    bg: "bg-amber-100",
+    text: "text-amber-600",
+    progressBg: "bg-amber-500"
+  },
+  red: {
+    bg: "bg-red-100",
+    text: "text-red-600",
+    progressBg: "bg-red-500"
+  },
+  indigo: {
+    bg: "bg-indigo-100",
+    text: "text-indigo-600",
+    progressBg: "bg-indigo-500"
+  }
+} as const
+
+const defaultColors = {
+  bg: "bg-slate-100",
+  text: "text-slate-600",
+  progressBg: "bg-slate-500"
+} as const
+
 export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrackCardProps) {
   const [isOpen, setIsOpen] = useState(isExpanded) // Start with parent's expanded state
 
@@ -22,35 +62,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
     setIsOpen(isExpanded)
   }, [isExpanded])
 
-  // Extract color for progress bar
-  const progressColor = track.colorClass.includes("purple")
-    ? "bg-purple-500"
-    : track.colorClass.includes("blue")
-      ? "bg-blue-500"
-      : track.colorClass.includes("green")
-        ? "bg-green-500"
-        : track.colorClass.includes("amber")
-          ? "bg-amber-500"
-          : track.colorClass.includes("red")
-            ? "bg-red-500"
-            : track.colorClass.includes("indigo")
-              ? "bg-indigo-500"
-              : "bg-primary"
-
-  // Get background color class for icon container
-  const iconBgColor = track.colorClass.includes("purple")
-    ? "bg-purple-500"
-    : track.colorClass.includes("blue")
-      ? "bg-blue-500"
-      : track.colorClass.includes("green")
-        ? "bg-green-500"
-        : track.colorClass.includes("amber")
-          ? "bg-amber-500"
-          : track.colorClass.includes("red")
-            ? "bg-red-500"
-            : track.colorClass.includes("indigo")
-              ? "bg-indigo-500"
-              : "bg-primary"
+  const colorClasses = colorMap[track.colorClass as keyof typeof colorMap] ?? defaultColors
 
   // Handle resource link clicks without toggling the card
   const handleResourceClick = (e: React.MouseEvent) => {
@@ -75,7 +87,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
 
         <CardHeader className="pb-2">
           <div className="flex items-center gap-2">
-            <div className={`p-2 rounded-lg ${iconBgColor} text-white`}>{track.icon}</div>
+            <div className={`p-2 rounded-lg ${colorClasses.progressBg} text-white`}>{track.icon}</div>
             <CardTitle className="text-slate-900">{track.title}</CardTitle>
           </div>
           <div className="my-4">
@@ -84,7 +96,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
               <span className="text-sm font-medium">{track.progress}%</span>
             </div>
             <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-              <div className={`h-full ${progressColor} rounded-full`} style={{ width: `${track.progress}%` }}></div>
+              <div className={`h-full ${colorClasses.progressBg} rounded-full`} style={{ width: `${track.progress}%` }}></div>
             </div>
           </div>
           <p className="text-sm text-slate-600 mb-2">{track.description}</p>
@@ -100,7 +112,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                   {track.milestones.map((milestone, index) => (
                     <div key={index} className="flex items-start gap-2 text-sm">
                       <div
-                        className={`w-2 h-2 rounded-full mt-1.5 ${milestone.completed ? progressColor : "bg-slate-300"}`}
+                        className={`w-2 h-2 rounded-full mt-1.5 ${milestone.completed ? colorClasses.progressBg : "bg-slate-300"}`}
                       />
                       <div>
                         <p className={milestone.completed ? "text-slate-900" : "text-slate-500"}>{milestone.title}</p>
