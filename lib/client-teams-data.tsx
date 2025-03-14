@@ -14,10 +14,10 @@ export const clientTeamsData: ClientTeam[] = [
   {
     id: "ream",
     name: "Ream",
-    description: "A high-performance Beam consensus client written in Rust, focusing on efficiency and reliability.",
+    description: "The high-performance Beam consensus client written in Rust, focusing on delivering the most performant and user-friendly Beam Chain client.",
     status: "new",
     links: {
-      website: "https://reamlabs.com",
+      website: "#",
       twitter: "https://twitter.com/reamlabs",
       github: "https://github.com/reamlabs",
     },
@@ -25,95 +25,95 @@ export const clientTeamsData: ClientTeam[] = [
   {
     id: "zeam",
     name: "Zeam",
-    description: "An Elixir-based Beam consensus client optimized for concurrent processing and fault tolerance.",
+    description: "The Zig-based client team focused on representing Asia in the Ethereum ecosystem, building foundational components and integrating with various ZKVMs.",
     status: "new",
     links: {
       website: "https://zeam.dev",
-      twitter: "https://twitter.com/zeamdev",
-      github: "https://github.com/zeam-dev",
+      twitter: "https://x.com/zeamETH",
+      github: "https://github.com/blockblaz/zeam",
     },
   },
   {
     id: "quadrivium",
     name: "Quadrivium",
-    description: "A research-focused Beam consensus client implementing novel cryptographic protocols.",
+    description: "The blockchain infrastructure team based in Kazakhstan with expertise in C++ implementations, notably maintaining a C++ libp2p library previously used in Polkadot.",
     status: "new",
     links: {
-      website: "https://quadrivium.xyz",
-      twitter: "https://twitter.com/quadriviumxyz",
-      github: "https://github.com/quadrivium",
+      website: "#",
+      twitter: "#",
+      github: "#",
     },
   },
   {
     id: "lantern",
     name: "Lantern",
-    description: "A lightweight Beam consensus client focused on accessibility and ease of deployment.",
+    description: "The team developing C-based Ethereum consensus layer libraries focused on enabling devices with limited compute to verify state root with zk proofs.",
     status: "new",
     links: {
-      website: "https://lantern.network",
-      twitter: "https://twitter.com/lanternnetwork",
-      github: "https://github.com/lantern-network",
+      website: "#",
+      twitter: "#",
+      github: "#",
     },
   },
   {
     id: "lambdaclass",
     name: "LambdaClass",
-    description: "A Beam consensus client built with functional programming principles for enhanced reliability.",
+    description: "The team with experience in ZK development across multiple projects, currently working on both an Elixir consensus client and considering Rust or their own language called Concrete for their Beam client.",
     status: "new",
     links: {
       website: "https://lambdaclass.com",
-      twitter: "https://twitter.com/lambdaclass",
+      twitter: "https://x.com/class_lambda",
       github: "https://github.com/lambdaclass",
     },
   },
   {
     id: "colibri",
     name: "Colibri",
-    description: "A modular Beam consensus client designed for flexibility and extensibility.",
+    description: "The client team focused on ultra-light client development for resource-constrained IoT devices, with experience building small-footprint implementations.",
     status: "new",
     links: {
-      website: "https://colibri.network",
-      twitter: "https://twitter.com/colibrinetwork",
-      github: "https://github.com/colibri-network",
+      website: "#",
+      twitter: "#",
+      github: "#",
     },
   },
   {
     id: "afream",
     name: "Afream",
-    description: "An African-led Beam consensus client initiative focusing on regional blockchain adoption.",
+    description: "The African-led Beam consensus client initiative focusing on regional blockchain adoption.",
     status: "new",
     links: {
-      website: "https://afream.africa",
-      twitter: "https://twitter.com/afreamhq",
-      github: "https://github.com/afream",
+      website: "#",
+      twitter: "#",
+      github: "#",
     },
   },
   {
     id: "nethermind",
     name: "Nethermind",
-    description: "A high-performance .NET Beam consensus client with enterprise-grade features and extensive APIs.",
+    description: "The high-performance .NET Beacon Chain client with enterprise-grade features and extensive APIs.",
     status: "new",
     links: {
       website: "https://nethermind.io",
       twitter: "https://twitter.com/nethermindeth",
-      github: "https://github.com/nethermindeth",
+      github: "https://github.com/nethermindeth/nethermind",
     },
   },
   {
     id: "grandine",
     name: "Grandine",
-    description: "A research-focused Ethereum consensus client implementing novel approaches to consensus mechanisms.",
+    description: "The research-focused Ethereum consensus client implementing novel approaches to consensus mechanisms.",
     status: "existing",
     links: {
       website: "https://grandine.io",
-      twitter: "https://twitter.com/grandineeth",
-      github: "https://github.com/grandinetech",
+      twitter: "https://x.com/grandineio",
+      github: "https://github.com/grandinetech/grandine",
     },
   },
   {
     id: "lodestar",
     name: "Lodestar",
-    description: "A TypeScript implementation of the Ethereum consensus client focused on modularity and extensibility.",
+    description: "The JavaScript/TypeScript implementation of the Ethereum consensus client focused on modularity and extensibility.",
     status: "existing",
     links: {
       website: "https://lodestar.chainsafe.io",
@@ -124,7 +124,7 @@ export const clientTeamsData: ClientTeam[] = [
   {
     id: "teku",
     name: "Teku",
-    description: "An enterprise-grade Ethereum consensus client built in Java by ConsenSys, designed for institutional staking.",
+    description: "The enterprise-grade Ethereum consensus client built in Java by ConsenSys, designed for institutional staking.",
     status: "existing",
     links: {
       website: "https://consensys.io/teku",
@@ -135,7 +135,7 @@ export const clientTeamsData: ClientTeam[] = [
   {
     id: "lighthouse",
     name: "Lighthouse",
-    description: "A high-performance Ethereum consensus client built in Rust, focused on security and efficiency.",
+    description: "The high-performance Ethereum consensus client built in Rust, focused on security and efficiency.",
     status: "existing",
     links: {
       website: "https://lighthouse.sigmaprime.io",
@@ -146,7 +146,7 @@ export const clientTeamsData: ClientTeam[] = [
   {
     id: "prysm",
     name: "Prysm",
-    description: "A Go implementation of Ethereum consensus, emphasizing usability and reliability for validators.",
+    description: "The Go implementation of Ethereum consensus, emphasizing usability and reliability for validators.",
     status: "existing",
     links: {
       website: "https://prysmaticlabs.com",
@@ -157,7 +157,7 @@ export const clientTeamsData: ClientTeam[] = [
   {
     id: "nimbus",
     name: "Nimbus",
-    description: "A lightweight Ethereum consensus client in Nim, optimized for resource-restricted devices.",
+    description: "The lightweight Ethereum consensus client in Nim, optimized for resource-restricted devices.",
     status: "existing",
     links: {
       website: "https://nimbus.team",

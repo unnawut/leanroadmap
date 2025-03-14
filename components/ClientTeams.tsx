@@ -8,8 +8,8 @@ export function ClientTeams() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {clientTeamsData.map((team) => (
         <Card key={team.id} className="bg-white border-slate-200 h-full">
-          <CardHeader className="pb-2">
-            <div className="flex justify-between items-start">
+          <CardHeader className="pb-4">
+            <div className="flex justify-between items-center">
               <CardTitle className="text-slate-900">{team.name}</CardTitle>
               <Badge 
                 variant={team.status === "existing" ? "outline" : "success"}
@@ -19,10 +19,10 @@ export function ClientTeams() {
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-slate-600 mb-4">{team.description}</p>
+            <p className="text-sm text-slate-600">{team.description}</p>
           </CardContent>
-          <CardFooter className="flex gap-2 pt-2 border-t border-slate-100">
-            {team.links.website && (
+          <CardFooter className="flex">
+            {team.links.website !== "#" && (
               <Link
                 href={team.links.website}
                 className="p-2 rounded-full hover:bg-slate-100"
@@ -32,7 +32,7 @@ export function ClientTeams() {
                 <ExternalLink className="h-4 w-4 text-slate-600" />
               </Link>
             )}
-            {team.links.twitter && (
+            {team.links.twitter !== "#" && (
               <Link
                 href={team.links.twitter}
                 className="p-2 rounded-full hover:bg-slate-100"
@@ -42,7 +42,7 @@ export function ClientTeams() {
                 <Twitter className="h-4 w-4 text-slate-600" />
               </Link>
             )}
-            {team.links.github && (
+            {team.links.github !== "#" && (
               <Link
                 href={team.links.github}
                 className="p-2 rounded-full hover:bg-slate-100"
