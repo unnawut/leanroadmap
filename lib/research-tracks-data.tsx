@@ -4,7 +4,6 @@ import { Shield, Lock, FileCheck, Cpu, Feather, FileCode } from "lucide-react"
 export interface ResearchTrack {
   id: string
   title: string
-  status: "On Track" | "At Risk" | "Completed" | "Paused"
   description: string
   icon: ReactNode
   colorClass: string
@@ -36,9 +35,8 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <Shield className="h-5 w-5" />,
     colorClass: "bg-purple-100 text-purple-600",
     progress: 10,
-    status: "On Track",
     lead: "Vitalik Buterin",
-    tags: ["Cryptography", "PQ-Resistant"],
+    tags: ["Quantum Security", "Chain Snarkification"],
     milestones: [
       { title: "Poseidon 2 hash function implementation", completed: true, date: "Jan 2025" },
       { title: "Winternitz variant of Lamport signatures", completed: true, date: "Feb 2025" },
@@ -59,9 +57,8 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <Lock className="h-5 w-5" />,
     colorClass: "bg-blue-100 text-blue-600",
     progress: 10,
-    status: "On Track",
     lead: "Dmitry Khovratovich",
-    tags: ["Security", "Analysis"],
+    tags: ["Quantum Security", "Chain Snarkification"],
     milestones: [
       { title: "Bounties established (66k already earned)", completed: true, date: "Jan 2025" },
       { title: "Research grants (three recipients chosen)", completed: true, date: "Feb 2025" },
@@ -84,9 +81,8 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <FileCheck className="h-5 w-5" />,
     colorClass: "bg-green-100 text-green-600",
     progress: 10,
-    status: "On Track",
     lead: "Benedikt Wagner",
-    tags: ["Signatures", "Optimization"],
+    tags: ["Quantum Security"],
     milestones: [
       { title: "Paper publication", completed: true, date: "Jan 2025" },
       { title: "Signature size below 3 kilobytes", completed: true, date: "Feb 2025" },
@@ -105,15 +101,14 @@ export const researchTracksData: ResearchTrack[] = [
     id: "minimal-zkvm",
     title: "Minimal ZKVMs & Performance",
     description:
-      "Benchmarking various ZKVMs with Plancky3 showing most promising results (2M Poseidon permutations/sec).",
+      "Benchmarking various ZKVMs with Plonky3 showing most promising results (2M Poseidon permutations/sec).",
     icon: <Cpu className="h-5 w-5" />,
     colorClass: "bg-amber-100 text-amber-600",
     progress: 10,
-    status: "At Risk",
     lead: "Thomas Coratger",
-    tags: ["Performance", "VM"],
+    tags: ["Chain Snarkification"],
     milestones: [
-      { title: "Plancky3 benchmarking (2M Poseidon perm/sec)", completed: true, date: "Feb 2025" },
+      { title: "Plonky3 benchmarking (2M Poseidon perm/sec)", completed: true, date: "Feb 2025" },
       { title: "Blake3 implementation (30k ops/sec)", completed: true, date: "Feb 2025" },
       { title: "Keccak implementation (4k ops/sec)", completed: true, date: "Mar 2025" },
       { title: "Starkware's STU performance testing", completed: true, date: "Mar 2025" },
@@ -134,9 +129,8 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <Feather className="h-5 w-5" />,
     colorClass: "bg-red-100 text-red-600",
     progress: 10,
-    status: "On Track",
     lead: "Josh Beal",
-    tags: ["Signatures", "Alternative"],
+    tags: ["Quantum Security"],
     milestones: [
       { title: "Proposal for Falcon signature aggregation", completed: true, date: "Feb 2025" },
       { title: "Size comparison (600 bytes vs 3 kilobytes)", completed: true, date: "Mar 2025" },
@@ -157,9 +151,8 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <FileCode className="h-5 w-5" />,
     colorClass: "bg-indigo-100 text-indigo-600",
     progress: 10,
-    status: "On Track",
     lead: "Alex Hicks",
-    tags: ["Verification", "Proofs"],
+    tags: ["Security Hardening"],
     milestones: [
       { title: "ZKVM formal verification project initiation", completed: true, date: "Jan 2025" },
       { title: "Executable specifications development", completed: true, date: "Feb 2025" },
