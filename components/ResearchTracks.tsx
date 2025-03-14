@@ -9,7 +9,7 @@ import { researchTracksData } from "@/lib/research-tracks-data"
 export function ResearchTracks() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [allExpanded, setAllExpanded] = useState(true) // Start with all expanded
+  const [allExpanded, setAllExpanded] = useState(false) // Start with all collapsed
 
   // Get unique tags from all research tracks
   const allTags = Array.from(new Set(researchTracksData.flatMap(track => track.tags))).sort()
@@ -97,7 +97,7 @@ export function ResearchTracks() {
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTracks.map((track) => (
           <ResearchTrackCard 
             key={track.id} 
