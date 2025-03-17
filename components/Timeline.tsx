@@ -58,7 +58,7 @@ export function Timeline() {
 
           {/* We are here marker */}
           <div 
-            className="absolute w-0 border-l border-dashed border-slate-600/30"
+            className="absolute w-0 border-l border-dashed border-slate-600/30 animate-pulse-subtle"
             style={{ 
               left: `${currentOffset}%`,
               top: "2rem", // Start after year labels
@@ -67,10 +67,10 @@ export function Timeline() {
             }}
           >
             <div className="absolute -top-2 -translate-x-1/2 whitespace-nowrap z-10">
-              <div className="bg-slate-600 text-white text-xs px-2 py-1 rounded">
+              <div className="bg-slate-600 text-white text-xs px-2 py-1 rounded animate-pulse-subtle">
                 We are here
               </div>
-              <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 mx-auto border-l-transparent border-r-transparent border-t-slate-600" />
+              <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 mx-auto border-l-transparent border-r-transparent border-t-slate-600 animate-pulse-subtle" />
             </div>
           </div>
 
@@ -108,6 +108,18 @@ export function Timeline() {
           </div>
         </div>
       </div>
+
+      {/* Add the animation keyframes */}
+      <style jsx global>{`
+        @keyframes pulse-subtle {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+        
+        .animate-pulse-subtle {
+          animation: pulse-subtle 2s ease-in-out infinite;
+        }
+      `}</style>
     </Card>
   )
 }
