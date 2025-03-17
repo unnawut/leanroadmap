@@ -53,7 +53,7 @@ export const researchTracksData: ResearchTrack[] = [
     id: "hash-based-multi-signatures",
     title: "Hash-Based Multi-Signatures",
     description:
-      "Develop hash-based multi-signatures using Winternitz XMSS as a post-quantum replacement for BLS signatures, and optimize key generation time while balancing security and efficiency for varying validator lifetimes.",
+      "Develop and analyze hash-based multi-signatures using Winternitz XMSS as a post-quantum replacement for BLS signatures.",
     icon: <FileCheck className="h-5 w-5" />,
     colorClass: "green",
     progress: 10,
@@ -61,9 +61,10 @@ export const researchTracksData: ResearchTrack[] = [
     leadLink: "https://benedikt-wagner.dev/",
     tags: ["Post-Quantum Signatures"],
     milestones: [
-      { title: "Paper publication", completed: true, date: "Jan 2025" },
-      { title: "Efficiency analysis of constraint parameters, choice of pqSNARK and aggregation", completed: true, date: "Mar 2025" },
-      { title: "Analysis of new proposals for hash-based multi-signatures", completed: false },
+      { title: "Paper publication (including proofs) and prototype implementation", completed: true, date: "Jan 2025" },
+      { title: "Efficiency analysis of hash-based signature candidates", completed: true, date: "Mar 2025" },
+      { title: "Exploring further optimizations for hash-based signature candidates", completed: false},
+      { title: "Identification of alternatives for post-quantum multi-signatures", completed: false },
     ],
     resources: [
       { title: "Hash-Based Multi-Signatures for Post-Quantum Ethereum", url: "https://eprint.iacr.org/2025/055", type: "paper" },
@@ -114,7 +115,7 @@ export const researchTracksData: ResearchTrack[] = [
     ],
     resources: [
       { title: "Falcon Signatures Website", url: "https://falcon-sign.info/", type: "website" },
-      { title: "Falcon Signatures Proposal for Ethereum", url: "https://ethresear.ch/t/falcon-as-an-ethereum-transaction-signature-the-good-the-bad-and-the-gnarly/21512", type: "proposal" },
+      { title: "Some existing work on Falcon-based multi-signatures", url: "https://eprint.iacr.org/2024/311", type: "paper"},
     ],
   },
   {
