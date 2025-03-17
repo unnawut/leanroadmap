@@ -13,7 +13,7 @@ export function BeamChainConcepts() {
           <CardTitle>Long-term Vision</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2 pl-5 text-sm list-none">
+          <ul className="space-y-2 p-0 md:pl-5 text-sm list-none">
             <li className="flex items-start">
               <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
               <span>Complete the roadmap in 4-5 years so Ethereum can go into maintenance mode</span>
@@ -40,7 +40,7 @@ export function BeamChainConcepts() {
           <CardTitle>Rationales</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2 pl-5 text-sm list-none">
+          <ul className="space-y-2 p-0 md:pl-5 text-sm list-none">
             <li className="flex items-start">
               <Check className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
               <span>Small incremental upgrades are only applicable to certain types of changes</span>
@@ -63,7 +63,7 @@ export function BeamChainConcepts() {
           <CardTitle>Key Resources</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2 pl-5 text-sm list-none">
+          <ul className="space-y-2 p-0 md:pl-5 text-sm list-none">
             {keyResourcesData.map((resource, index) => (
               <li key={index} className="flex items-start">
                 <resource.icon className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
