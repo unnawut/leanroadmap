@@ -9,7 +9,7 @@ import { researchTracksData } from "@/lib/research-tracks-data"
 export function ResearchTracks() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [allExpanded, setAllExpanded] = useState(false) // Start with all collapsed
+  const [allExpanded, setAllExpanded] = useState(true) // Start with all expanded
 
   // Get unique tags from all research tracks
   const allTags = Array.from(new Set(researchTracksData.flatMap(track => track.tags))).sort()
