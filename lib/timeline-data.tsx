@@ -1,4 +1,5 @@
-import { Shield, Lock, FileCheck, Cpu, Feather, FileCode, Pill, Beaker, Hammer, FlaskConical } from "lucide-react"
+import { Shield, Lock, FileCheck, Cpu, Feather, FileCode, Pill, Pencil, Hammer, FlaskConical } from "lucide-react"
+import type { ReactNode } from "react"
 
 export interface TimelineItem {
     id: string
@@ -23,7 +24,7 @@ export const timelineData: TimelineItem[] = [
       title: "Speccing",
       startDate: { year: 2025, month: 1 }, // Starts at beginning of 2025
       endDate: { year: 2026, month: 5 }, // Ends at beginning of 2026
-      icon: <Beaker className="h-5 w-5" />,
+      icon: <Pencil className="h-5 w-5" />,
       color: "bg-amber-500",
     },
     {

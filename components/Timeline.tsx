@@ -48,7 +48,7 @@ export function Timeline() {
           </div>
 
           {/* Year labels */}
-          <div className="grid grid-cols-7 mb-16 relative">
+          <div className="grid grid-cols-7 mb-12 relative">
             {Array.from({ length: TIMELINE_CONFIG.END_YEAR - TIMELINE_CONFIG.START_YEAR + 1 }).map((_, index) => (
               <div key={index} className="text-sm font-medium text-slate-900">
                 {TIMELINE_CONFIG.START_YEAR + index}
@@ -61,12 +61,12 @@ export function Timeline() {
             className="absolute w-0 border-l border-dashed border-slate-600/30 animate-pulse-subtle"
             style={{ 
               left: `${currentOffset}%`,
-              top: "2rem", // Start after year labels
+              top: "1.5rem", // Start after year labels
               bottom: "0", // Extend to bottom
               zIndex: 0
             }}
           >
-            <div className="absolute -top-2 -translate-x-1/2 whitespace-nowrap z-10">
+            <div className="absolute -translate-x-1/2 whitespace-nowrap z-10">
               <div className="bg-slate-600 text-white text-xs px-2 py-1 rounded animate-pulse-subtle">
                 We are here
               </div>
@@ -75,7 +75,7 @@ export function Timeline() {
           </div>
 
           {/* Timeline bars */}
-          <div className="relative h-56">
+          <div className="relative h-40">
             {timelineData.map((item, index) => {
               const { startOffset, endOffset } = getGridRange(item.startDate, item.endDate)
               const width = endOffset - startOffset
@@ -83,22 +83,22 @@ export function Timeline() {
               return (
                 <div
                   key={item.id}
-                  className="absolute flex items-center"
+                  className="absolute"
                   style={{
-                    top: `${index * 3.5}rem`,
+                    top: `${index * 2.7}rem`,
                     left: `${startOffset}%`,
                     width: `${width}%`,
                   }}
                 >
                   {/* Simple filled bar */}
-                  <div className={`h-3 w-full ${item.color} rounded-full`} />
+                  <div className={`h-2 w-full ${item.color} rounded-full`} />
                   
                   {/* Icon and title */}
-                  <div className="absolute -top-8 left-0 flex items-center gap-2.5">
-                    <div className={`${item.color} p-2.5 rounded-lg text-white`}>
+                  <div className="absolute -top-7 flex items-center gap-2.5">
+                    <div className={`${item.color} p-2 rounded-lg text-white`}>
                       {item.icon}
                     </div>
-                    <span className="text-sm font-medium text-slate-900">
+                    <span className="text-sm text-slate-900">
                       {item.title}
                     </span>
                   </div>
