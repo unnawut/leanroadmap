@@ -6,6 +6,7 @@ import { BeamCalls } from "@/components/BeamCalls"
 import { Timeline } from "@/components/Timeline"
 import { Footer } from "@/components/Footer"
 import { ResearchTracks } from "@/components/ResearchTracks"
+import { BeamChainConcepts } from "@/components/BeamChainConcepts"
 
 export function Dashboard() {
   return (
@@ -23,6 +24,11 @@ export function Dashboard() {
       <section>
         <h2>Timeline</h2>
         <Timeline />
+      </section>
+
+      <section>
+        <h2>Beam Chain Concepts</h2>
+        <BeamChainConcepts />
       </section>
 
       <section>
