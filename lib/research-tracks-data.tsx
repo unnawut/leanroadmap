@@ -62,7 +62,8 @@ export const researchTracksData: ResearchTrack[] = [
     tags: ["Post-Quantum Signatures"],
     milestones: [
       { title: "Paper publication (including proofs) and prototype implementation", completed: true, date: "Jan 2025" },
-      { title: "Efficiency analysis hash-based signature candidates", completed: true, date: "Mar 2025" },
+      { title: "Efficiency analysis of hash-based signature candidates", completed: true, date: "Mar 2025" },
+      { title: "Exploring further optimizations for hash-based signature candidates", completed: false},
       { title: "Identification of alternatives for post-quantum multi-signatures", completed: false },
     ],
     resources: [
