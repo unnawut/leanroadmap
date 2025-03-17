@@ -61,9 +61,9 @@ export const researchTracksData: ResearchTrack[] = [
     leadLink: "https://benedikt-wagner.dev/",
     tags: ["Post-Quantum Signatures"],
     milestones: [
-      { title: "Paper publication", completed: true, date: "Jan 2025" },
-      { title: "Efficiency analysis of constraint parameters, choice of pqSNARK and aggregation", completed: true, date: "Mar 2025" },
-      { title: "Analysis of new proposals for hash-based multi-signatures", completed: false },
+      { title: "Paper publication (including proofs) and prototype implementation", completed: true, date: "Jan 2025" },
+      { title: "Efficiency analysis hash-based signature candidates", completed: true, date: "Mar 2025" },
+      { title: "Identification of alternatives for post-quantum multi-signatures", completed: false },
     ],
     resources: [
       { title: "Hash-Based Multi-Signatures for Post-Quantum Ethereum", url: "https://eprint.iacr.org/2025/055", type: "paper" },
