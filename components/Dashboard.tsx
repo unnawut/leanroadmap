@@ -10,7 +10,7 @@ import { ResearchTracks } from "@/components/ResearchTracks"
 export function Dashboard() {
   return (
     <div className="container mx-auto space-y-10">
-      <header className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6">
+      <header className="flex flex-col md:flex-row justify-between md:items-center gap-4 my-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Beam Chain R&D Progress</h1>
           <p className="text-slate-600 mt-1">Track Beam Chain research progress across all workstreams</p>

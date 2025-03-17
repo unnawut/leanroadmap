@@ -98,18 +98,24 @@ export function ResearchTracks() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredTracks.map((track) => (
-          <ResearchTrackCard 
-            key={track.id} 
-            track={track} 
-            isExpanded={allExpanded}
-            onToggle={(expanded) => {
-              // If a card is manually expanded while all others are collapsed,
-              // or manually collapsed while all others are expanded,
-              // we don't want to affect the global state
-            }}
-          />
-        ))}
+        {filteredTracks.length > 0 ? (
+          filteredTracks.map((track) => (
+            <ResearchTrackCard 
+              key={track.id} 
+              track={track} 
+              isExpanded={allExpanded}
+              onToggle={(expanded) => {
+                // If a card is manually expanded while all others are collapsed,
+                // or manually collapsed while all others are expanded,
+                // we don't want to affect the global state
+              }}
+            />
+          ))
+        ) : (
+          <div className="col-span-full flex justify-center items-center py-12 text-slate-500">
+            <p className="text-lg">No research tracks found.</p>
+          </div>
+        )}
       </div>
     </>
   )
