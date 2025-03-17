@@ -80,8 +80,6 @@ export function Timeline() {
               const { startOffset, endOffset } = getGridRange(item.startDate, item.endDate)
               const width = endOffset - startOffset
 
-              console.log(item.title, item.startDate, item.endDate,startOffset, endOffset, width)
-
               return (
                 <div
                   key={item.id}
