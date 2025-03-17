@@ -73,8 +73,8 @@ export const clientTeamsData: ClientTeam[] = [
     status: "new",
     links: {
       website: "#",
-      twitter: "#",
-      github: "#",
+      twitter: "https://x.com/CorpusCoreHQ",
+      github: "https://github.com/corpus-core/c4",
     },
   },
   {
