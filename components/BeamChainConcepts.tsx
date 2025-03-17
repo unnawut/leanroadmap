@@ -1,6 +1,8 @@
 "use client"
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/primitives"
+import { Check, Rocket } from "lucide-react"
+import { keyResourcesData } from "@/lib/key-resources-data"
 
 export function BeamChainConcepts() {
   return (
@@ -11,22 +13,46 @@ export function BeamChainConcepts() {
           <CardTitle>Long-term Vision</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="list-disc pl-5 space-y-1 text-sm">
-            <li>Complete the roadmap in 4-5 years so Ethereum can go into maintenance mode</li>
-            <li>Start thinking about ossification like Bitcoin</li>
-            <li>Renaissance of solo validating through "Zen Staking," "Fish Staking," and "Fiverr Staking"</li>
-            <li>Clean and simple protocol worthy of a neutral global base layer</li>
-            <li>Fully verifying light clients that can work on even the smallest devices</li>
+          <ul className="space-y-2 pl-5 text-sm list-none">
+            <li className="flex items-start">
+              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Complete the roadmap in 4-5 years so Ethereum can go into maintenance mode</span>
+            </li>
+            <li className="flex items-start">
+              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Start thinking about ossification like Bitcoin</span>
+            </li>
+            <li className="flex items-start">
+              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Renaissance of solo validating through "Zen Staking," "Fish Staking," and "Fiverr Staking"</span>
+            </li>
+            <li className="flex items-start">
+              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Clean and simple protocol worthy of a neutral global base layer</span>
+            </li>
+            <li className="flex items-start">
+              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Fully verifying light clients that can work on even the smallest devices</span>
+            </li>
           </ul>
         </CardContent>
         <CardHeader>
           <CardTitle>Rationales</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="list-disc pl-5 space-y-1 text-sm">
-            <li>Small incremental upgrades are only applicable to certain types of changes</li>
-            <li>Governance batching optimization: batch everything to a single fork</li>
-            <li>Avoid existing technical debts</li>
+          <ul className="space-y-2 pl-5 text-sm list-none">
+            <li className="flex items-start">
+              <Check className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Small incremental upgrades are only applicable to certain types of changes</span>
+            </li>
+            <li className="flex items-start">
+              <Check className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Governance batching optimization: batch everything to a single fork</span>
+            </li>
+            <li className="flex items-start">
+              <Check className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>Avoid existing technical debts</span>
+            </li>
           </ul>
         </CardContent>
       </Card>
@@ -37,14 +63,14 @@ export function BeamChainConcepts() {
           <CardTitle>Key Resources</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2 list-disc pl-5 text-sm">
-            <li><a href="https://www.youtube.com/watch?v=Gjuenkv1zrw" className="text-blue-600 hover:underline">Keynote: [title redacted] at Devcon SEA</a> (Nov 2024)</li>
-            <li><a href="https://www.youtube.com/watch?v=8mJDt8TGebc" className="text-blue-600 hover:underline">Ethereum Roadmap & Beamchain at Bankless Summit</a> (Nov 2024)</li>
-            <li><a href="https://www.youtube.com/watch?v=88FDeg5JaUk" className="text-blue-600 hover:underline">Deep Dive into Ethereum's Beam Chain with The Defiant</a> (Nov 2024)</li>
-            <li><a href="https://www.youtube.com/watch?v=63w7kHh737w" className="text-blue-600 hover:underline">Beam chain tldr at Devcon SEA Community-Led Session</a> (Nov 2024)</li>
-            <li><a href="https://youtu.be/jUFVOUq0-fc?si=4ayhCrWKLNiv2q10&t=2936" className="text-blue-600 hover:underline">Ethereum's Three Front War on Bankless Podcast</a> (Dec 2024)</li>
-            <li><a href="https://medium.com/@organmo/future-of-ethereum-1-beam-chain-52492e39af62" className="text-blue-600 hover:underline">Future of Ethereum: Beam Chain by Seungmin Jeon</a> (Jan 2025)</li>
-            <li><a href="https://x.com/VitalikButerin/status/1885046277932552697" className="text-blue-600 hover:underline">Twitter post on the beam chain roadmap by Vitalik Buterin</a> (Jan 2025)</li>
+          <ul className="space-y-2 pl-5 text-sm list-none">
+            {keyResourcesData.map((resource, index) => (
+              <li key={index} className="flex items-start">
+                <resource.icon className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+                <a href={resource.url} className="text-blue-600 hover:underline">{resource.title}</a> 
+                <span className="text-gray-500 pl-1">({resource.date})</span>
+              </li>
+            ))}
           </ul>
         </CardContent>
       </Card>
