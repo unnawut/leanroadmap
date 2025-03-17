@@ -53,7 +53,7 @@ export const researchTracksData: ResearchTrack[] = [
     id: "hash-based-multi-signatures",
     title: "Hash-Based Multi-Signatures",
     description:
-      "Develop hash-based multi-signatures using Winternitz XMSS as a post-quantum replacement for BLS signatures, and optimize key generation time while balancing security and efficiency for varying validator lifetimes.",
+      "Develop and analyze hash-based multi-signatures using Winternitz XMSS as a post-quantum replacement for BLS signatures.",
     icon: <FileCheck className="h-5 w-5" />,
     colorClass: "green",
     progress: 10,
