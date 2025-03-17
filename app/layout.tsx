@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import AnimatedBackground from '@/components/AnimatedBackground'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 export const metadata: Metadata = {
   title: 'Beam Chain Roadmap',

@@ -38,7 +38,7 @@ function Beams(props: any) {
       ];
       
       // Color
-      const intensity = (0.1 + Math.random() * 0.4);
+      const intensity = (0.1 + Math.random() * 0.2);
       const color = new THREE.Color(
         0.5 * intensity, 
         0.8 * intensity, 
