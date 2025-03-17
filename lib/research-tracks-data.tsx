@@ -41,10 +41,9 @@ export const researchTracksData: ResearchTrack[] = [
     milestones: [
       { title: "Bounties established ($66k already earned)", completed: true, date: "Jan 2025" },
       { title: "Research grants (three recipients chosen)", completed: true, date: "Feb 2025" },
-      { title: "First workshop completed", completed: true, date: "Jan 2025" },
-      { title: "Additional workshops at encryption conferences", completed: false },
-      { title: "Research awards distribution", completed: false },
-      { title: "Grobner Basis Exploratory hardware purchase", completed: false },
+      { title: "Workshop on Cryptanalysis of Algebraic Hash Functions at 31st Fast Software Encryption Conference", completed: true, date: "Mar 2025" },
+      { title: "Workshop at Algebraic Hash Cryptanalysis Days", completed: false, date: "May 2025" },
+      { title: "Groebner basis exploratorations", completed: false },
     ],
     resources: [
       { title: "EF's Poseidon Cryptanalysis Initiative", url: "https://www.poseidon-initiative.info/", type: "website" },
@@ -63,11 +62,8 @@ export const researchTracksData: ResearchTrack[] = [
     tags: ["Post-Quantum Signatures"],
     milestones: [
       { title: "Paper publication", completed: true, date: "Jan 2025" },
-      { title: "Signature size below 3 kilobytes", completed: true, date: "Feb 2025" },
-      { title: "Verification time below 1 millisecond", completed: true, date: "Feb 2025" },
-      { title: "Key generation time reduction", completed: true, date: "Mar 2025" },
-      { title: "Reduce Poseidon permutation calls (<200)", completed: true, date: "Mar 2025" },
-      { title: "Further optimizations", completed: false },
+      { title: "Efficiency analysis of constraint parameters, choice of pqSNARK and aggregation", completed: true, date: "Mar 2025" },
+      { title: "Analysis of new proposals for hash-based multi-signatures", completed: false },
     ],
     resources: [
       { title: "Hash-Based Multi-Signatures for Post-Quantum Ethereum", url: "https://eprint.iacr.org/2025/055", type: "paper" },
@@ -86,17 +82,19 @@ export const researchTracksData: ResearchTrack[] = [
     leadLink: "https://x.com/tcoratger",
     tags: ["Chain Snarkification"],
     milestones: [
-      { title: "Plonky3 benchmarking (2M Poseidon perm/sec)", completed: true, date: "Feb 2025" },
-      { title: "Blake3 implementation (30k ops/sec)", completed: true, date: "Feb 2025" },
-      { title: "Keccak implementation (4k ops/sec)", completed: true, date: "Mar 2025" },
-      { title: "Starkware's STU performance testing", completed: true, date: "Mar 2025" },
-      { title: "Specialized VM for signature aggregation", completed: false },
-      { title: "VM options exploration (Binus M3, SP1, KRU, STU, Jolt, OpenVM)", completed: false },
+      { title: "Benchmark hash in SNARK (Plonky3, STwo, Binius, Hashcaster)", completed: true, date: "Feb 2025" },
+      { title: "Hashcaster exploration work", completed: true, date: "Feb 2025" },
+      { title: "Snarkify hash-based signature aggregation with SP1 & OpenVM", completed: true, date: "Feb 2025" },
+      { title: "Explore GKR style provers", completed: false },
+      { title: "Explore WHIR", completed: false },
+      { title: "Explore GKR style provers", completed: false },
+      { title: "More explorations over binary field techniques", completed: false },
     ],
     resources: [
-      { title: "Projects That Shaped Modern zkVMs", url: "https://blog.zksecurity.xyz/posts/zkvm-projects-1/", type: "website" },
-      { title: "Jolt and Lasso: A New Approach to Building zkVMs", url: "https://ethresear.ch/t/jolt-and-lasso-a-new-approach-to-building-zkvms/16448", type: "website" },
-      { title: "Jolt and Lasso: A New Approach to Building zkVMs — Part 2", url: "https://ethresear.ch/t/jolt-and-lasso-a-new-approach-to-building-zkvm-part-2/17114", type: "website" },
+      { title: "Benchmark Hash in SNARK", url: "https://hackmd.io/@han/bench-hash-in-snark", type: "website" },
+      { title: "Hash-based Signature Aggregation", url: "https://hackmd.io/@han/hash-sig-agg", type: "website" },
+      { title: "Circuit gadgets", url: "https://hackmd.io/@tcoratger/SyWbmVPckx", type: "website" },
+      { title: "WHIR", url: "https://gfenzi.io/papers/whir/", type: "paper" },
     ],
   },
   {
@@ -112,10 +110,7 @@ export const researchTracksData: ResearchTrack[] = [
     tags: ["Post-Quantum Signatures"],
     milestones: [
       { title: "Proposal for Falcon signature aggregation", completed: true, date: "Feb 2025" },
-      { title: "Size comparison (600 bytes vs 3 kilobytes)", completed: true, date: "Mar 2025" },
-      { title: "Validator capacity analysis", completed: true, date: "Mar 2025" },
       { title: "Combining Falcon signatures with code-based SNARKs", completed: false },
-      { title: "Performance testing", completed: false },
     ],
     resources: [
       { title: "Falcon Signatures Website", url: "https://falcon-sign.info/", type: "website" },
@@ -125,7 +120,7 @@ export const researchTracksData: ResearchTrack[] = [
   {
     id: "formal-verification",
     title: "Formal Verification",
-    description: "Mathematically prove the security properties of cryptographic proof systems like FRI, STU, and WER using the Lean 4 framework, creating structured blueprints that map out theorem dependencies to verify that the post-quantum cryptography implementations are correct.",
+    description: "Mathematically prove the security properties of cryptographic proof systems like FRI, STU, and WER using the Lean 4 framework, creating structured blueprints that map out theorem dependencies to verify that the zkEVM implementations are correct.",
     icon: <FileCode className="h-5 w-5" />,
     colorClass: "indigo",
     progress: 10,
@@ -133,13 +128,11 @@ export const researchTracksData: ResearchTrack[] = [
     leadLink: "https://x.com/alexanderlhicks",
     tags: ["Security Hardening"],
     milestones: [
-      { title: "ZKVM formal verification project initiation", completed: true, date: "Jan 2025" },
-      { title: "Executable specifications development", completed: true, date: "Feb 2025" },
-      { title: "Lean 4 framework implementation", completed: true, date: "Mar 2025" },
+      { title: "zkEVM formal verification project initiation", completed: true, date: "Jan 2025" },
+      { title: "Lean 4 framework implementation", completed: false, date: "Mar 2025" },
       { title: "FRI proof system specification", completed: false },
       { title: "STU proof system specification", completed: false },
       { title: "WER proof system specification", completed: false },
-      { title: "Lean Blueprints organization", completed: false },
     ],
     resources: [
       { title: "EF's zkEVM Formal Verification Project", url: "https://verified-zkevm.org/", type: "website" },
