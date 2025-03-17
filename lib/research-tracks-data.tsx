@@ -114,7 +114,7 @@ export const researchTracksData: ResearchTrack[] = [
     ],
     resources: [
       { title: "Falcon Signatures Website", url: "https://falcon-sign.info/", type: "website" },
-      { title: "Falcon Signatures Proposal for Ethereum", url: "https://ethresear.ch/t/falcon-as-an-ethereum-transaction-signature-the-good-the-bad-and-the-gnarly/21512", type: "proposal" },
+      { title: "Some existing work on Falcon-based multi-signatures", url: "https://eprint.iacr.org/2024/311", type: "paper"},
     ],
   },
   {
