@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import AnimatedBackground from '@/components/AnimatedBackground'
 
 export const metadata: Metadata = {
   title: 'Beam Chain Roadmap',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-blue-50 min-h-screen">
+        <AnimatedBackground />
+        {children}
+      </body>
     </html>
   )
 }
