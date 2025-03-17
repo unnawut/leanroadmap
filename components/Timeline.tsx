@@ -33,7 +33,7 @@ export function Timeline() {
   const currentOffset = getGridPosition(CURRENT_DATE)
 
   return (
-    <Card className="bg-white border-slate-200 p-4">
+    <Card className="bg-white border-slate-200 p-4 overflow-clip">
       <div className="relative px-8 py-4">
         <div className="relative -mr-44">
           {/* Year marker lines */}

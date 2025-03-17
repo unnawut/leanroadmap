@@ -13,7 +13,7 @@ export function Dashboard() {
       <header className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Beam Chain R&D Progress</h1>
-          <p className="text-slate-600 mt-1">Track research progress across all workstreams</p>
+          <p className="text-slate-600 mt-1">Track Beam Chain research progress across all workstreams</p>
         </div>
         <Badge variant="outline">
           Last updated: March 2025

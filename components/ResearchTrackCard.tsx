@@ -112,7 +112,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                       {track.milestones.map((milestone, index) => (
                         <div key={index} className="flex items-start gap-2 text-sm">
                           <div
-                            className={`w-2 h-2 rounded-full mt-1.5 ${milestone.completed ? colorClasses.progressBg : "bg-slate-300"}`}
+                            className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${milestone.completed ? colorClasses.progressBg : "bg-slate-300"}`}
                           />
                           <div>
                             <p className={milestone.completed ? "text-slate-900" : "text-slate-500"}>{milestone.title}</p>
@@ -134,7 +134,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                           target="_blank"
                           onClick={handleResourceClick}
                         >
-                          <ExternalLink className="h-3.5 w-3.5" />
+                          <ExternalLink className="h-3.5 w-3.5 shrink-0" />
                           <span>{resource.title}</span>
                           <span className="text-xs text-slate-400 ml-auto">{resource.type}</span>
                         </Link>
@@ -143,7 +143,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                   </div>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 mt-2">Lead: {track.lead}</p>
+              <p className="text-sm text-slate-600 mt-2">Lead: <Link href={track.leadLink} className="text-slate-700 hover:text-slate-900 hover:underline">{track.lead}</Link></p>
             </CardContent>
 
             <CardFooter className="pt-2 border-t border-slate-100">
