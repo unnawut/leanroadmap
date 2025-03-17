@@ -6,6 +6,11 @@ export interface BeamCall {
   summary: string
   thumbnail: string
   youtubeUrl: string
+  resources?: {
+    title: string
+    url: string
+    type: "agenda" | "slides" | "notes"
+  }[]
 }
 
 export const beamCallsData: BeamCall[] = [
@@ -18,6 +23,18 @@ export const beamCallsData: BeamCall[] = [
       "The kickoff call covering social layer progress, funding structures, legal updates, introductions of research specialists and client teams, and coordinator presentations",
     thumbnail: "/placeholder.svg?height=180&width=320",
     youtubeUrl: "https://www.youtube.com/watch?v=sSx6juIu4AI",
+    resources: [
+      {
+        title: "Meeting agenda",
+        url: "https://github.com/ethereum/pm/issues/1327",
+        type: "agenda"
+      },
+      {
+        title: "Presentation slides",
+        url: "https://docs.google.com/presentation/d/14Fx1s5cBMNG9LDw5PsMsvq7KV5mSqlf9z3ZMCcOuxkM",
+        type: "slides"
+      }
+    ]
   },
   {
     id: "call-2",
@@ -28,6 +45,38 @@ export const beamCallsData: BeamCall[] = [
       "Technical updates on post-quantum cryptography solutions, featuring technical presentations from researchers on signature schemes, hash functions, minimal zkVMs, and formal verification.",
     thumbnail: "/placeholder.svg?height=180&width=320",
     youtubeUrl: "https://www.youtube.com/watch?v=BtYb_guRq78",
+    resources: [
+      {
+        title: "Meeting agenda",
+        url: "https://github.com/ethereum/pm/issues/1336",
+        type: "agenda"
+      },
+      {
+        title: "Introduction slides",
+        url: "https://docs.google.com/presentation/d/1V3utqODaki03C_UqOEuD9sD_sm_rqSq035nMD_qa7Sg",
+        type: "slides"
+      },
+      {
+        title: "Kakarot Labs' introduction",
+        url: "https://docs.google.com/presentation/d/1zjXOUuP_Dyiuxb5w35E4n-EWf8UD4x2oKvKlsIxG_-s",
+        type: "slides"
+      },
+      {
+        title: "Thomas Coratger's slides on zkVM",
+        url: "https://hackmd.io/@tcoratger/B16moU0q1x#/",
+        type: "slides"
+      },
+      {
+        title: "Benedikt Wagner's slides on hash-based multi-signatures",
+        url: "./resources/beam-calls/status-hash-sig.pdf",
+        type: "slides"
+      },
+      {
+        title: "Alex's slides on post-quantum distributed validators",
+        url: "./resources/beam-calls/status-hash-sig.pdf",
+        type: "slides"
+      },
+    ]
   },
   {
     id: "call-3",

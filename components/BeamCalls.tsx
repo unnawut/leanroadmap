@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ExternalLink, Play } from "lucide-react"
+import { ExternalLink, FileText, ListChecks, Play, Presentation } from "lucide-react"
 import { Card, CardContent, CardFooter } from "@/components/ui/primitives"
 import { Button } from "@/components/ui/Button"
 import Link from "next/link"
@@ -13,6 +13,20 @@ function getYoutubeVideoId(url: string): string | null {
   const match = url.match(regExp);
   
   return (match && match[2].length === 11) ? match[2] : null;
+}
+
+// Helper function to get resource icon based on type
+function getResourceIcon(type: string) {
+  switch (type) {
+    case "slides":
+      return <Presentation className="h-4 w-4 shrink-0" />
+    case "notes":
+      return <FileText className="h-4 w-4 shrink-0" />
+    case "agenda":
+      return <ListChecks className="h-4 w-4 shrink-0" />
+    default:
+      return <ExternalLink className="h-4 w-4 shrink-0" />
+  }
 }
 
 export function BeamCalls() {
@@ -63,6 +77,24 @@ export function BeamCalls() {
             )}
             <p className="text-xs text-slate-500 mb-2">{call.date}</p>
             <p className="text-sm text-slate-600">{call.summary}</p>
+            {call.resources && call.resources.length > 0 && (
+              <div className="mt-4 space-y-2">
+                <p className="text-sm font-medium text-slate-700">Resources:</p>
+                <div className="flex flex-wrap gap-2">
+                  {call.resources.map((resource, index) => (
+                    <Link
+                      key={index}
+                      href={resource.url}
+                      target="_blank"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-slate-700 bg-slate-100 rounded-full hover:bg-slate-200"
+                    >
+                      {getResourceIcon(resource.type)}
+                      {resource.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </CardContent>
           <CardFooter className="pt-0">
             { call.youtubeUrl !== "#" ?
