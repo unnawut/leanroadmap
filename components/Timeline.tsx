@@ -94,7 +94,7 @@ export function Timeline() {
                   <div className={`h-2 w-full ${item.color} rounded-full`} />
                   
                   {/* Icon and title */}
-                  <div className="absolute -top-7 flex items-center gap-2.5">
+                  <div className="absolute -top-8 flex items-center gap-2.5">
                     <div className={`${item.color} p-2 rounded-lg text-white`}>
                       {item.icon}
                     </div>
