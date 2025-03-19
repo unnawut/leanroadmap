@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter, Badge } from "@/components/ui/primitives"
 import Link from "next/link"
-import { ExternalLink, Twitter, Github } from "lucide-react"
+import { ExternalLink, Twitter, Github, FileText } from "lucide-react"
 import { ClientTeam, clientTeamsData } from "@/lib/client-teams-data"
 import { useState } from "react"
 
@@ -17,6 +17,12 @@ export function ClientTeams() {
   }
 
   const clearFilter = () => setFilter(null)
+
+  // Helper function to find a link by type and ensure it's a valid URL (not "#")
+  const getLinkUrl = (links: ClientTeam["links"], type: string): string | null => {
+    const link = links.find(link => link.type === type);
+    return link?.url && link.url !== "#" ? link.url : null;
+  }
 
   return (
     <div className="space-y-6">
@@ -71,9 +77,10 @@ export function ClientTeams() {
             </CardContent>
             <CardFooter>
               <div className="flex flex-wrap gap-2">
-                {team.links.website !== "#" && (
+                {/* Website Link */}
+                {getLinkUrl(team.links, "website") && (
                   <Link
-                    href={team.links.website}
+                    href={getLinkUrl(team.links, "website") || "#"}
                     target="_blank"
                     className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-slate-700 bg-slate-100 rounded-full hover:bg-slate-200"
                   >
@@ -81,9 +88,10 @@ export function ClientTeams() {
                     Website
                   </Link>
                 )}
-                {team.links.twitter !== "#" && (
+                {/* Twitter Link */}
+                {getLinkUrl(team.links, "twitter") && (
                   <Link
-                    href={team.links.twitter}
+                    href={getLinkUrl(team.links, "twitter") || "#"}
                     target="_blank"
                     className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-slate-700 bg-slate-100 rounded-full hover:bg-slate-200"
                   >
@@ -91,14 +99,26 @@ export function ClientTeams() {
                     Twitter
                   </Link>
                 )}
-                {team.links.github !== "#" && (
+                {/* GitHub Link */}
+                {getLinkUrl(team.links, "github") && (
                   <Link
-                    href={team.links.github}
+                    href={getLinkUrl(team.links, "github") || "#"}
                     target="_blank"
                     className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-slate-700 bg-slate-100 rounded-full hover:bg-slate-200"
                   >
                     <Github className="h-4 w-4 shrink-0" />
                     GitHub
+                  </Link>
+                )}
+                {/* HackMD Link */}
+                {getLinkUrl(team.links, "hackmd") && (
+                  <Link
+                    href={getLinkUrl(team.links, "hackmd") || "#"}
+                    target="_blank"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-slate-700 bg-slate-100 rounded-full hover:bg-slate-200"
+                  >
+                    <FileText className="h-4 w-4 shrink-0" />
+                    HackMD
                   </Link>
                 )}
               </div>
