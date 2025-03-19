@@ -25,40 +25,42 @@ export function ClientTeams() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-wrap items-center gap-2 mb-2">
-        <div className="flex flex-wrap gap-2">
-          <button 
-            onClick={() => toggleFilter("new")}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-              filter === "new" 
-                ? "bg-slate-900 text-white" 
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
+    <div className="space-y-4">
+      <p className="text-lg text-slate-600 -mt-6">
+        {clientTeamsData.length} client teams ({clientTeamsData.filter(team => team.status === "new").length} new + {clientTeamsData.filter(team => team.status === "existing").length} existing) are committed to building the Beam Chain.
+      </p>
+
+      <div className="flex flex-wrap gap-2 mt-0">
+        <button 
+          onClick={() => toggleFilter("new")}
+          className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            filter === "new" 
+              ? "bg-slate-900 text-white" 
+              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+          }`}
+        >
+          ✨ New Teams
+        </button>
+        <button 
+          onClick={() => toggleFilter("existing")}
+          className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            filter === "existing" 
+              ? "bg-slate-900 text-white" 
+              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+          }`}
+        >
+          💪 Existing Teams
+        </button>
+        {filter !== null && (
+          <button
+            onClick={clearFilter}
+            className="px-3 py-1.5 text-sm font-medium text-slate-500 hover:text-slate-700"
           >
-            ✨ New Teams
+            Clear filter
           </button>
-          <button 
-            onClick={() => toggleFilter("existing")}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-              filter === "existing" 
-                ? "bg-slate-900 text-white" 
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            💪 Existing Teams
-          </button>
-          {filter !== null && (
-            <button
-              onClick={clearFilter}
-              className="px-3 py-1.5 text-sm font-medium text-slate-500 hover:text-slate-700"
-            >
-              Clear filter
-            </button>
-          )}
-        </div>
+        )}
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTeams.map((team) => (
           <Card 
