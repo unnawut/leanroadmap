@@ -61,7 +61,10 @@ export function ClientTeams() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTeams.map((team) => (
-          <Card key={team.id} className="bg-white border-slate-200 h-full">
+          <Card 
+            key={team.id} 
+            className="border-slate-200 h-full relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-transparent before:absolute before:inset-0 before:-translate-x-full before:animate-[shine_3s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent hover:before:animate-[shine_1.5s_infinite]"
+          >
             <CardHeader className="pb-4">
               <div className="flex justify-between items-center">
                 <CardTitle className="text-slate-900">{team.name}</CardTitle>
