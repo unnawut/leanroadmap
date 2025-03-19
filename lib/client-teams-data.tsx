@@ -96,7 +96,7 @@ export const clientTeamsData: ClientTeam[] = [
     links: {
       website: "https://nethermind.io",
       twitter: "https://twitter.com/nethermindeth",
-      github: "https://github.com/nethermindeth/nethermind",
+      github: "https://github.com/nethermindeth",
     },
   },
   {
@@ -107,7 +107,7 @@ export const clientTeamsData: ClientTeam[] = [
     links: {
       website: "https://grandine.io",
       twitter: "https://x.com/grandineio",
-      github: "https://github.com/grandinetech/grandine",
+      github: "https://github.com/grandinetech",
     },
   },
   {
@@ -118,7 +118,7 @@ export const clientTeamsData: ClientTeam[] = [
     links: {
       website: "https://lodestar.chainsafe.io",
       twitter: "https://twitter.com/lodestar_eth",
-      github: "https://github.com/ChainSafe/lodestar",
+      github: "https://github.com/ChainSafe",
     },
   },
   {
@@ -129,7 +129,7 @@ export const clientTeamsData: ClientTeam[] = [
     links: {
       website: "https://consensys.io/teku",
       twitter: "https://twitter.com/Teku_ConsenSys",
-      github: "https://github.com/ConsenSys/teku",
+      github: "https://github.com/ConsenSys",
     },
   },
   {
@@ -140,7 +140,7 @@ export const clientTeamsData: ClientTeam[] = [
     links: {
       website: "https://lighthouse.sigmaprime.io",
       twitter: "https://twitter.com/sigp_io",
-      github: "https://github.com/sigp/lighthouse",
+      github: "https://github.com/sigp",
     },
   },
   {
@@ -151,7 +151,7 @@ export const clientTeamsData: ClientTeam[] = [
     links: {
       website: "https://prysmaticlabs.com",
       twitter: "https://twitter.com/prylabs",
-      github: "https://github.com/prysmaticlabs/prysm",
+      github: "https://github.com/prysmaticlabs",
     },
   },
   {
@@ -162,7 +162,7 @@ export const clientTeamsData: ClientTeam[] = [
     links: {
       website: "https://nimbus.team",
       twitter: "https://twitter.com/ethnimbus",
-      github: "https://github.com/status-im/nimbus-eth2",
+      github: "https://github.com/status-im",
     },
   },
 ]
