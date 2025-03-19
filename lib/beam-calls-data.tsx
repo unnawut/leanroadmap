@@ -73,7 +73,7 @@ export const beamCallsData: BeamCall[] = [
       },
       {
         title: "Alex's slides on post-quantum distributed validators",
-        url: "./resources/beam-calls/status-hash-sig.pdf",
+        url: "./resources/beam-calls/thbs_beamcall2.pdf",
         type: "slides"
       },
     ]
