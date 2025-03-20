@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Search, ChevronUp, ChevronDown } from "lucide-react"
 import { Input } from "@/components/ui/primitives"
 import { ResearchTrackCard } from "@/components/ResearchTrackCard"
-import { researchTracksData } from "@/lib/research-tracks-data"
+import { researchTracksData } from "@/data/research-tracks"
 
 export function ResearchTracks() {
   const [searchTerm, setSearchTerm] = useState("")

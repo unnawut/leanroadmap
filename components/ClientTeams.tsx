@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter, Badge } from "@/components/ui/primitives"
 import Link from "next/link"
 import { ExternalLink, Twitter, Github, FileText } from "lucide-react"
-import { ClientTeam, clientTeamsData } from "@/lib/client-teams-data"
+import { ClientTeam, clientTeamsData } from "@/data/client-teams"
 import { useState } from "react"
 
 export function ClientTeams() {

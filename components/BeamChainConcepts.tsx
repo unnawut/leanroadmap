@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/primitives"
 import { Check, Rocket } from "lucide-react"
-import { keyResourcesData } from "@/lib/key-resources-data"
+import { keyResourcesData } from "@/data/key-resources"
 
 export function BeamChainConcepts() {
   return (

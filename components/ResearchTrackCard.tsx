@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { ExternalLink, Plus, Minus } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, Badge, Separator } from "@/components/ui/primitives"
-import type { ResearchTrack } from "@/lib/research-tracks-data"
+import type { ResearchTrack } from "@/data/research-tracks"
 import Link from "next/link"
 
 interface ResearchTrackCardProps {
