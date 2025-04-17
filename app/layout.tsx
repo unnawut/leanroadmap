@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="bg-blue-50 min-h-screen">
         <AnimatedBackground />
         {children}
-        <Script defer data-domain="beamroadmap.org" src="https://plausible.io/js/script.js" />
+        <Script defer data-domain="beamroadmap.org" src="https://analytics.beamroadmap.org/js/script.js" />
       </body>
     </html>
   )
