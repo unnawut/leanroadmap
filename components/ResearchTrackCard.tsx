@@ -83,7 +83,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
   return (
     <div className="grid transition-all duration-300 ease-in-out h-fit">
         <Card
-          className="bg-white border-slate-200 hover:bg-slate-50 transition-all duration-200 cursor-pointer group relative"
+          className={`bg-white border-slate-200 hover:bg-slate-50 transition-all duration-200 cursor-pointer group relative plausible-event-name=${track.title.replace(" ", "+")}+Research+Card+Click`}
           onClick={handleToggle}
         >
             <div className="absolute top-4 right-4">

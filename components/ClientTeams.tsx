@@ -65,7 +65,7 @@ export function ClientTeams() {
         {filteredTeams.map((team) => (
           <Card 
             key={team.id} 
-            className="border-slate-200 h-full relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-transparent before:absolute before:inset-0 before:-translate-x-full before:animate-[shine_3s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent hover:before:animate-[shine_1.5s_infinite]"
+            className={`border-slate-200 h-full relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-transparent before:absolute before:inset-0 before:-translate-x-full before:animate-[shine_3s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent hover:before:animate-[shine_1.5s_infinite] plausible-event-name=${team.name.replace(" ", "+")}+Client+Team+Click`}
           >
             <CardHeader className="pb-4">
               <div className="flex justify-between items-center">

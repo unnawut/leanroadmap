@@ -77,7 +77,7 @@ export function ResearchTracks() {
             <button
               key={tag}
               onClick={() => toggleTag(tag)}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors plausible-event-name=Research+Tag+Click ${
                 selectedTags.includes(tag)
                   ? 'bg-slate-900 text-white'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
