@@ -148,7 +148,7 @@ export const beamCallsData: BeamCall[] = [
     summary:
       "Discussion of Ethereum validator exit mechanisms and proposals to improve exit queue flexibility while maintaining protocol security.",
     thumbnail: null,
-    youtubeUrl: "#",
+    youtubeUrl: "https://www.youtube.com/watch?v=M6oRqhjMFQc",
     resources: [
       {
         title: "Meeting agenda",
