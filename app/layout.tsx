@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="bg-blue-50 min-h-screen">
         <AnimatedBackground />
         {children}
-        <script defer data-domain="beamroadmap.org" src="http://analytics.beamroadmap.org/js/script.outbound-links.tagged-events.js"></script>
+        <script defer data-domain="beamroadmap.org" src="https://analytics.beamroadmap.org/js/script.outbound-links.tagged-events.js"></script>
       </body>
     </html>
   )
