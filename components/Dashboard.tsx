@@ -22,7 +22,7 @@ export function Dashboard() {
             Track Beam Chain research progress across all workstreams
           </p>
         </div>
-        <Badge variant="outline">Last updated: March 2025</Badge>
+        <Badge variant="outline">Last updated: May 2025</Badge>
       </header>
 
       <section>
