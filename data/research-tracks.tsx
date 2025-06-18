@@ -32,7 +32,9 @@ export const researchTracksData: ResearchTrack[] = [
     id: 'poseidon',
     title: 'Poseidon Cryptanalysis Initiative',
     description:
-      'Comprehensively tests the security of the Poseidon hash function through a multi-faceted approach including competitive bounties, targeted research grants, specialized workshops, academic awards, and advanced hardware testing.',
+      'Comprehensively tests the security of the Poseidon hash function through a multi-faceted approach \
+      including competitive bounties, targeted research grants, specialized workshops, academic awards, \
+      and advanced hardware testing.',
     icon: <Lock className="h-5 w-5" />,
     colorClass: 'blue',
     progress: 10,
@@ -88,7 +90,8 @@ export const researchTracksData: ResearchTrack[] = [
     id: 'hash-based-multi-signatures',
     title: 'Hash-Based Multi-Signatures',
     description:
-      'Develop and analyze hash-based multi-signatures using Winternitz XMSS as a post-quantum replacement for BLS signatures.',
+      'Develop and analyze hash-based multi-signatures using Winternitz XMSS as a post-quantum \
+      replacement for BLS signatures.',
     icon: <FileCheck className="h-5 w-5" />,
     colorClass: 'green',
     progress: 70,
@@ -151,7 +154,8 @@ export const researchTracksData: ResearchTrack[] = [
     id: 'minimal-zkvm',
     title: 'Minimal Zero-Knowledge Virtual Machines',
     description:
-      'Explore minimal zero-knowledge virtual machines (zkVMs) specifically optimized for signature aggregation, including various options like Binus M3, SP1, KRU, STU, Jolt, and OpenVM.',
+      'Explore minimal zero-knowledge virtual machines (zkVMs) specifically optimized for \
+      signature aggregation, including various options like Binus M3, SP1, KRU, STU, Jolt, and OpenVM.',
     icon: <Cpu className="h-5 w-5" />,
     colorClass: 'amber',
     progress: 10,
@@ -193,7 +197,9 @@ export const researchTracksData: ResearchTrack[] = [
     id: 'falcon-signatures',
     title: 'Falcon Signatures',
     description:
-      'Exploring lattice-based signatures as an alternative to hash-based signatures for their significantly smaller signatures, potentially allowing Ethereum to support five times more validators.',
+      'Exploring lattice-based signatures as an alternative to hash-based signatures for their \
+      significantly smaller signatures, potentially allowing Ethereum to support five times\
+      more validators.',
     icon: <Feather className="h-5 w-5" />,
     colorClass: 'red',
     progress: 10,
@@ -222,7 +228,9 @@ export const researchTracksData: ResearchTrack[] = [
     id: 'formal-verification',
     title: 'Formal Verification',
     description:
-      'Mathematically prove the security properties of cryptographic proof systems like FRI, STU, and WHIR using the Lean 4 framework, creating structured blueprints that map out theorem dependencies to verify that the zkEVM implementations are correct.',
+      'Mathematically prove the security properties of cryptographic proof systems like FRI, STU, and WHIR \
+      using the Lean 4 framework, creating structured blueprints that map out theorem dependencies to verify \
+      that the zkEVM implementations are correct.',
     icon: <FileCode className="h-5 w-5" />,
     colorClass: 'indigo',
     progress: 10,
