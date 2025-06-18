@@ -61,6 +61,26 @@ export const researchTracksData: ResearchTrack[] = [
         url: 'https://www.poseidon-initiative.info/',
         type: 'website',
       },
+      {
+        title: 'Poseidon2: A Faster Version of the Poseidon Hash Function',
+        url: 'https://eprint.iacr.org/2023/323',
+        type: 'paper',
+      },
+      {
+        title: 'Attacking Poseidon via Graeffe-Based Root-Finding over NTT-Friendly Fields',
+        url: 'https://eprint.iacr.org/2025/937',
+        type: 'paper',
+      },
+      {
+        title: 'Breaking Poseidon Challenges with Graeffe Transforms and Complexity Analysis by FFT Lower Bounds',
+        url: 'https://eprint.iacr.org/2025/950',
+        type: 'paper',
+      },
+      {
+        title: 'Poseidon and Neptune: Gröbner Basis Cryptanalysis Exploiting Subspace Trails',
+        url: 'https://eprint.iacr.org/2025/954',
+        type: 'paper',
+      },
     ],
   },
   {
