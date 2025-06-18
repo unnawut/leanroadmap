@@ -119,6 +119,11 @@ export const researchTracksData: ResearchTrack[] = [
         url: 'https://github.com/b-wagn/hash-sig',
         type: 'code',
       },
+      {
+        title: 'At the Top of the Hypercube – Better Size-Time Tradeoffs for Hash-Based Signatures',
+        url: 'https://eprint.iacr.org/2025/889',
+        type: 'paper',
+      },
     ],
   },
   {
