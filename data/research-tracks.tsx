@@ -72,7 +72,8 @@ export const researchTracksData: ResearchTrack[] = [
         type: 'paper',
       },
       {
-        title: 'Breaking Poseidon Challenges with Graeffe Transforms and Complexity Analysis by FFT Lower Bounds',
+        title:
+          'Breaking Poseidon Challenges with Graeffe Transforms and Complexity Analysis by FFT Lower Bounds',
         url: 'https://eprint.iacr.org/2025/950',
         type: 'paper',
       },
