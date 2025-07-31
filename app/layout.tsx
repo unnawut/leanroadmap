@@ -4,8 +4,8 @@ import './globals.css';
 import AnimatedBackground from '@/components/ui/AnimatedBackground';
 
 export const metadata: Metadata = {
-  title: 'Lean Ethereum Roadmap',
-  description: 'Track research progress across all Lean Ethereum workstreams',
+  title: 'Lean Consensus Roadmap',
+  description: 'Track research progress across all Lean Consensus workstreams',
 };
 
 export default function RootLayout({
