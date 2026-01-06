@@ -269,6 +269,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                     <Link
                       href={resource.url}
                       key={index}
+                      title={resource.title}
                       className={`flex items-center gap-2 text-sm px-2 -mx-2 rounded-lg transition-colors ${
                         isInactive
                           ? 'text-slate-400 hover:text-slate-500 hover:bg-slate-100/50'
@@ -279,10 +280,19 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                     >
                       <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-60" />
                       <span className="truncate">{resource.title}</span>
-                      <span
-                        className={`text-[10px] uppercase tracking-wide ml-auto shrink-0 px-1.5 py-0.5 ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
-                      >
-                        {resource.type}
+                      <span className="ml-auto flex items-center gap-2 shrink-0">
+                        {resource.date && (
+                          <span
+                            className={`text-[10px] font-mono-data ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
+                          >
+                            {resource.date}
+                          </span>
+                        )}
+                        <span
+                          className={`text-[10px] uppercase tracking-wide px-1.5 py-0.5 ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
+                        >
+                          {resource.type}
+                        </span>
                       </span>
                     </Link>
                   ))}
