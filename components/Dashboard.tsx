@@ -3,6 +3,7 @@
 import { Badge } from '@/components/ui/primitives';
 import { Benchmarks } from '@/components/Benchmarks';
 import { ClientTeams } from '@/components/ClientTeams';
+import { Devnets } from '@/components/Devnets';
 import { LeanCalls } from '@/components/LeanCalls';
 import { Timeline } from '@/components/Timeline';
 import { Footer } from '@/components/Footer';
@@ -54,13 +55,18 @@ export function Dashboard() {
       </header>
 
       <section className="space-y-4">
+        <h2>Timeline</h2>
+        <Timeline />
+      </section>
+
+      <section className="space-y-4">
         <h2>Benchmarks</h2>
         <Benchmarks />
       </section>
 
       <section className="space-y-4">
-        <h2>Timeline</h2>
-        <Timeline />
+        <h2>Devnets</h2>
+        <Devnets />
       </section>
 
       <section className="space-y-4">
