@@ -25,7 +25,8 @@ export interface Milestone {
 export interface Resource {
   title: string;
   url: string;
-  type: 'specs' | 'paper' | 'code' | 'presentation' | 'website';
+  type: 'specs' | 'paper' | 'code' | 'presentation' | 'website' | 'article';
+  date?: string;
 }
 
 export const researchTracksData: ResearchTrack[] = [
@@ -344,22 +345,22 @@ export const researchTracksData: ResearchTrack[] = [
       {
         title: 'Toward a General Model for Proposer Selection Mechanism Design',
         url: 'https://ethresear.ch/t/toward-a-general-model-for-proposer-selection-mechanism-design/21790',
-        type: 'paper',
+        type: 'article',
       },
       {
-        title: 'APS Presentation',
+        title: 'Attester-Proposer Separation Seminar Presentation at King\'s College London',
         url: 'https://docs.google.com/presentation/d/1C4Iykpf-zNqCE1TyWxDzzw_A7n52GaUJz01Hw5v-NPo/edit',
         type: 'presentation',
       },
       {
         title: 'Unbundling Staking: Towards Rainbow Staking',
         url: 'https://ethresear.ch/t/unbundling-staking-towards-rainbow-staking/18683',
-        type: 'paper',
+        type: 'article',
       },
       {
-        title: 'Rainbow Roles Incentives: aBPS, FocilR, AS',
+        title: 'Rainbow Roles Incentives: ABPS, FOCIL + AS',
         url: 'https://ethresear.ch/t/rainbow-roles-incentives-abps-focilr-as/21826',
-        type: 'paper',
+        type: 'article',
       },
     ],
   },
@@ -389,17 +390,17 @@ export const researchTracksData: ResearchTrack[] = [
       {
         title: '3-Slot Finality: SSF Is Not About Single Slot',
         url: 'https://ethresear.ch/t/3-slot-finality-ssf-is-not-about-single-slot/20927',
-        type: 'paper',
+        type: 'article',
       },
       {
         title: 'Integrating 3SF with ePBS, FOCIL, and PeerDAS',
         url: 'https://ethresear.ch/t/integrating-3sf-with-epbs-focil-and-peerdas/22909',
-        type: 'paper',
+        type: 'article',
       },
       {
         title: 'LMD GHOST with ~256 Validators and a Fast-Following Finality Gadget',
         url: 'https://ethresear.ch/t/lmd-ghost-with-256-validators-and-a-fast-following-finality-gadget/22856',
-        type: 'paper',
+        type: 'article',
       },
     ],
   },
