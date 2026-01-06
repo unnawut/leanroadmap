@@ -339,6 +339,12 @@ export const researchTracksData: ResearchTrack[] = [
         type: 'specs',
         date: "Dec '24",
       },
+      {
+        title: 'Eth P2P: How Ethereum Talks to Itself',
+        url: 'https://docs.google.com/presentation/d/1Ws-iPfzzA3N2BCLiMgJGb_LbSiGllK4LCs6CCx3Yswo/edit',
+        type: 'presentation',
+        date: "Nov '25",
+      }
     ],
   },
   {
