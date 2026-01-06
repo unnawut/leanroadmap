@@ -22,49 +22,73 @@ interface ResearchTrackCardProps {
   onToggle: (expanded: boolean) => void;
 }
 
-// Color mapping for different themes
+// Refined color mapping with gradients and glows
 const colorMap = {
   purple: {
-    bg: 'bg-purple-100',
-    text: 'text-purple-600',
-    progressBg: 'bg-purple-500',
+    bg: 'bg-violet-50',
+    text: 'text-violet-600',
+    progressBg: 'bg-gradient-to-r from-violet-500 to-purple-500',
+    iconBg: 'bg-gradient-to-br from-violet-500 to-purple-600',
+    glow: 'shadow-violet-500/20',
+    accent: 'border-violet-200',
   },
   blue: {
-    bg: 'bg-blue-100',
-    text: 'text-blue-600',
-    progressBg: 'bg-blue-500',
+    bg: 'bg-sky-50',
+    text: 'text-sky-600',
+    progressBg: 'bg-gradient-to-r from-sky-400 to-blue-500',
+    iconBg: 'bg-gradient-to-br from-sky-500 to-blue-600',
+    glow: 'shadow-sky-500/20',
+    accent: 'border-sky-200',
   },
   green: {
-    bg: 'bg-green-100',
-    text: 'text-green-600',
-    progressBg: 'bg-green-500',
+    bg: 'bg-emerald-50',
+    text: 'text-emerald-600',
+    progressBg: 'bg-gradient-to-r from-emerald-400 to-green-500',
+    iconBg: 'bg-gradient-to-br from-emerald-500 to-green-600',
+    glow: 'shadow-emerald-500/20',
+    accent: 'border-emerald-200',
   },
   amber: {
-    bg: 'bg-amber-100',
+    bg: 'bg-amber-50',
     text: 'text-amber-600',
-    progressBg: 'bg-amber-500',
+    progressBg: 'bg-gradient-to-r from-amber-400 to-orange-500',
+    iconBg: 'bg-gradient-to-br from-amber-500 to-orange-600',
+    glow: 'shadow-amber-500/20',
+    accent: 'border-amber-200',
   },
   red: {
-    bg: 'bg-red-100',
-    text: 'text-red-600',
-    progressBg: 'bg-red-500',
+    bg: 'bg-rose-50',
+    text: 'text-rose-600',
+    progressBg: 'bg-gradient-to-r from-rose-400 to-red-500',
+    iconBg: 'bg-gradient-to-br from-rose-500 to-red-600',
+    glow: 'shadow-rose-500/20',
+    accent: 'border-rose-200',
   },
   indigo: {
-    bg: 'bg-indigo-100',
+    bg: 'bg-indigo-50',
     text: 'text-indigo-600',
-    progressBg: 'bg-indigo-500',
+    progressBg: 'bg-gradient-to-r from-indigo-400 to-indigo-600',
+    iconBg: 'bg-gradient-to-br from-indigo-500 to-indigo-700',
+    glow: 'shadow-indigo-500/20',
+    accent: 'border-indigo-200',
   },
   teal: {
-    bg: 'bg-teal-100',
+    bg: 'bg-teal-50',
     text: 'text-teal-600',
-    progressBg: 'bg-teal-500',
+    progressBg: 'bg-gradient-to-r from-teal-400 to-teal-500',
+    iconBg: 'bg-gradient-to-br from-teal-500 to-teal-600',
+    glow: 'shadow-teal-500/20',
+    accent: 'border-teal-200',
   },
 } as const;
 
 const defaultColors = {
-  bg: 'bg-slate-100',
+  bg: 'bg-slate-50',
   text: 'text-slate-600',
-  progressBg: 'bg-slate-500',
+  progressBg: 'bg-gradient-to-r from-slate-400 to-slate-500',
+  iconBg: 'bg-gradient-to-br from-slate-500 to-slate-600',
+  glow: 'shadow-slate-500/20',
+  accent: 'border-slate-200',
 } as const;
 
 export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrackCardProps) {
@@ -93,57 +117,82 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
   return (
     <div className="grid transition-all duration-300 ease-in-out h-fit">
       <Card
-        className={`bg-white border-slate-200 hover:bg-slate-50 transition-all duration-200 cursor-pointer group relative plausible-event-name=${track.title.replace(' ', '+')}+Research+Card+Click ${
+        className={`relative bg-white/80 backdrop-blur-sm border-slate-200/60 hover:border-slate-300/80 hover:shadow-lg hover:shadow-slate-200/50 transition-all duration-300 cursor-pointer group plausible-event-name=${track.title.replace(' ', '+')}+Research+Card+Click ${
           isInactive ? 'opacity-60 grayscale' : ''
         }`}
         onClick={handleToggle}
       >
-        <div className="absolute top-4 right-4">
-          {isOpen ? (
-            <Minus className="h-4 w-4 text-slate-400" />
-          ) : (
-            <Plus className="h-4 w-4 text-slate-400" />
-          )}
+        {/* Subtle accent border on hover */}
+        <div
+          className={`absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none border-2 ${colorClasses.accent}`}
+        />
+
+        {/* Toggle indicator */}
+        <div className="absolute top-4 right-4 z-10">
+          <div
+            className={`p-1 rounded-md transition-all duration-200 ${isOpen ? 'bg-slate-100' : 'bg-transparent group-hover:bg-slate-50'}`}
+          >
+            {isOpen ? (
+              <Minus className="h-4 w-4 text-slate-500" />
+            ) : (
+              <Plus className="h-4 w-4 text-slate-400 group-hover:text-slate-600" />
+            )}
+          </div>
         </div>
 
         <CardHeader className="pb-2">
-          <div className="flex items-center gap-2">
-            <div className={`p-2 rounded-lg ${colorClasses.progressBg} text-white`}>
+          <div className="flex items-center gap-3">
+            <div
+              className={`p-2.5 rounded-xl ${colorClasses.iconBg} text-white shadow-lg ${colorClasses.glow} transition-transform duration-200 group-hover:scale-105`}
+            >
               {track.icon}
             </div>
-            <div className="flex items-center gap-2">
-              <CardTitle className={`${isInactive ? 'text-slate-500' : 'text-slate-900'}`}>
-                {track.title}
-              </CardTitle>
-              {isInactive && (
-                <Badge
-                  variant="outline"
-                  className="text-xs bg-slate-100 text-slate-500 border-slate-300"
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <CardTitle
+                  className={`text-base tracking-tight ${isInactive ? 'text-slate-500' : 'text-slate-800'}`}
                 >
-                  Inactive
-                </Badge>
-              )}
+                  {track.title}
+                </CardTitle>
+                {isInactive && (
+                  <Badge
+                    variant="outline"
+                    className="text-[10px] bg-slate-50 text-slate-400 border-slate-200 px-1.5 py-0"
+                  >
+                    Inactive
+                  </Badge>
+                )}
+              </div>
             </div>
           </div>
-          <div className="my-4">
-            <div className="flex justify-between mb-1">
-              <span className={`text-sm ${isInactive ? 'text-slate-400' : 'text-slate-600'}`}>
+
+          {/* Progress section */}
+          <div className="mt-4 mb-3">
+            <div className="flex justify-between items-baseline mb-1.5">
+              <span
+                className={`text-xs uppercase tracking-wide font-medium ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
+              >
                 Progress
               </span>
-              <span className={`text-sm font-medium ${isInactive ? 'text-slate-400' : ''}`}>
+              <span
+                className={`font-mono-data text-sm font-semibold ${isInactive ? 'text-slate-400' : colorClasses.text}`}
+              >
                 {track.progress}%
               </span>
             </div>
-            <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+            <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
               <div
-                className={`h-full ${colorClasses.progressBg} rounded-full ${
+                className={`h-full ${colorClasses.progressBg} rounded-full transition-all duration-500 ${
                   isInactive ? 'opacity-50' : ''
                 }`}
                 style={{ width: `${track.progress}%` }}
-              ></div>
+              />
             </div>
           </div>
-          <p className={`text-sm mb-2 ${isInactive ? 'text-slate-400' : 'text-slate-600'}`}>
+
+          <p
+            className={`text-sm leading-relaxed ${isInactive ? 'text-slate-400' : 'text-slate-600'}`}
+          >
             {track.description}
           </p>
         </CardHeader>
@@ -155,24 +204,26 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
           >
             <div className="min-h-0 overflow-hidden">
               <div
-                className={`bg-slate-50 p-3 rounded-lg transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+                className={`bg-gradient-to-br from-slate-50 to-slate-100/50 p-4 rounded-xl border border-slate-100 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
               >
-                <h4 className="font-medium text-sm mb-2">Key Milestones</h4>
-                <div className="space-y-2 mb-4">
+                <h4 className="font-semibold text-xs uppercase tracking-wide text-slate-500 mb-3">
+                  Key Milestones
+                </h4>
+                <div className="space-y-2.5 mb-4">
                   {track.milestones.map((milestone, index) => (
-                    <div key={index} className="flex items-start gap-2 text-sm">
+                    <div key={index} className="flex items-start gap-2.5 text-sm">
                       <div
-                        className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${milestone.completed ? colorClasses.progressBg : 'bg-slate-300'} ${
+                        className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${milestone.completed ? colorClasses.progressBg : 'bg-slate-200'} ${
                           isInactive ? 'opacity-50' : ''
                         }`}
                       />
                       <div>
                         <p
-                          className={`${
+                          className={`leading-snug ${
                             milestone.completed
                               ? isInactive
                                 ? 'text-slate-400'
-                                : 'text-slate-900'
+                                : 'text-slate-700 font-medium'
                               : isInactive
                                 ? 'text-slate-300'
                                 : 'text-slate-500'
@@ -182,7 +233,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                         </p>
                         {milestone.date && (
                           <p
-                            className={`text-xs ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
+                            className={`text-xs font-mono-data mt-0.5 ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
                           >
                             {milestone.date}
                           </p>
@@ -192,26 +243,28 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                   ))}
                 </div>
 
-                <Separator className="my-3" />
+                <Separator className="my-4 bg-slate-200/60" />
 
-                <h4 className="font-medium text-sm mb-2">Resources</h4>
+                <h4 className="font-semibold text-xs uppercase tracking-wide text-slate-500 mb-3">
+                  Resources
+                </h4>
                 <div className="space-y-2">
                   {track.resources.map((resource, index) => (
                     <Link
                       href={resource.url}
                       key={index}
-                      className={`flex items-center gap-2 text-sm hover:underline ${
+                      className={`flex items-center gap-2 text-sm py-1.5 px-2 -mx-2 rounded-lg transition-colors ${
                         isInactive
-                          ? 'text-slate-400 hover:text-slate-500'
-                          : 'text-slate-700 hover:text-slate-900'
+                          ? 'text-slate-400 hover:text-slate-500 hover:bg-slate-100/50'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-white'
                       }`}
                       target="_blank"
                       onClick={handleResourceClick}
                     >
-                      <ExternalLink className="h-3.5 w-3.5 shrink-0" />
-                      <span>{resource.title}</span>
+                      <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                      <span className="truncate">{resource.title}</span>
                       <span
-                        className={`text-xs ml-auto ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
+                        className={`text-[10px] uppercase tracking-wide ml-auto shrink-0 px-1.5 py-0.5 rounded ${isInactive ? 'text-slate-300 bg-slate-100' : 'text-slate-400 bg-slate-100'}`}
                       >
                         {resource.type}
                       </span>
@@ -221,28 +274,33 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
               </div>
             </div>
           </div>
-          <p className={`text-sm mt-2 ${isInactive ? 'text-slate-400' : 'text-slate-600'}`}>
-            Lead:{' '}
+
+          {/* Lead section */}
+          <div
+            className={`flex items-center gap-1.5 mt-3 text-sm ${isInactive ? 'text-slate-400' : 'text-slate-500'}`}
+          >
+            <span className="text-xs uppercase tracking-wide font-medium">Lead:</span>
             <Link
               href={track.leadLink}
-              className={`hover:underline ${
+              className={`font-medium transition-colors ${
                 isInactive
                   ? 'text-slate-400 hover:text-slate-500'
-                  : 'text-slate-700 hover:text-slate-900'
+                  : 'text-slate-700 hover:text-teal-600'
               }`}
+              onClick={handleResourceClick}
             >
               {track.lead}
             </Link>
-          </p>
+          </div>
         </CardContent>
 
-        <CardFooter className="pt-2 border-t border-slate-100">
-          <div className="flex gap-1 flex-wrap">
+        <CardFooter className="pt-3 border-t border-slate-100/80">
+          <div className="flex gap-1.5 flex-wrap">
             {track.tags.map((tag, i) => (
               <Badge
                 key={i}
                 variant="outline"
-                className={`text-xs ${isInactive ? 'bg-slate-50 text-slate-400 border-slate-200' : 'bg-slate-100'}`}
+                className={`text-[10px] font-medium tracking-wide ${isInactive ? 'bg-slate-50/50 text-slate-400 border-slate-200/60' : 'bg-white text-slate-500 border-slate-200/80 hover:border-slate-300'}`}
               >
                 {tag}
               </Badge>
