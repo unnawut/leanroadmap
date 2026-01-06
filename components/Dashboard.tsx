@@ -1,6 +1,7 @@
 'use client';
 
 import { Badge } from '@/components/ui/primitives';
+import { Benchmarks } from '@/components/Benchmarks';
 import { ClientTeams } from '@/components/ClientTeams';
 import { LeanCalls } from '@/components/LeanCalls';
 import { Timeline } from '@/components/Timeline';
@@ -51,6 +52,11 @@ export function Dashboard() {
           </div>
         </div>
       </header>
+
+      <section className="space-y-4">
+        <h2>Benchmarks</h2>
+        <Benchmarks />
+      </section>
 
       <section className="space-y-4">
         <h2>Timeline</h2>
