@@ -306,7 +306,7 @@ export const researchTracksData: ResearchTrack[] = [
     status: 'active',
     progress: 30,
     lead: 'Raúl Kripalani',
-    leadLink: 'https://github.com/ppopth',
+    leadLink: 'https://x.com/raulvk',
     tags: ['Networking', 'Performance'],
     milestones: [
       {
@@ -402,7 +402,7 @@ export const researchTracksData: ResearchTrack[] = [
     status: 'active',
     progress: 50,
     lead: 'Barnabé Monnot',
-    leadLink: '',
+    leadLink: 'https://x.com/barnabemonnot',
     tags: ['Consensus', 'Performance'],
     milestones: [
       { title: 'Exploratory research', completed: false },
