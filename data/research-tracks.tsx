@@ -138,16 +138,16 @@ export const researchTracksData: ResearchTrack[] = [
         date: "Jan '25",
       },
       {
-        title: 'Follow-up research on Hash-Based Multi-Signatures (Top of the hypercube)',
-        url: 'https://eprint.iacr.org/2025/889.pdf',
-        type: 'paper',
-        date: "May '25",
-      },
-      {
         title: 'Towards Hash-Based Multi-Signatures for Post-Quantum Distributed Validators',
         url: 'https://github.com/ObolNetwork/pqdv/blob/main/doc/main.pdf',
         type: 'paper',
         date: "Mar '25",
+      },
+      {
+        title: 'Follow-up research on Hash-Based Multi-Signatures (Top of the hypercube)',
+        url: 'https://eprint.iacr.org/2025/889.pdf',
+        type: 'paper',
+        date: "May '25",
       },
       {
         title: 'Reference implementation in Rust (old)',
@@ -202,16 +202,16 @@ export const researchTracksData: ResearchTrack[] = [
         type: 'website',
       },
       {
-        title: 'Circuit gadgets',
-        url: 'https://hackmd.io/@tcoratger/SyWbmVPckx',
-        type: 'website',
-        date: "Feb '25"
-      },
-      {
         title: 'WHIR',
         url: 'https://gfenzi.io/papers/whir/',
         type: 'paper',
         date: "Sep '24",
+      },
+      {
+        title: 'Circuit gadgets',
+        url: 'https://hackmd.io/@tcoratger/SyWbmVPckx',
+        type: 'website',
+        date: "Feb '25"
       },
     ],
   },
@@ -328,16 +328,16 @@ export const researchTracksData: ResearchTrack[] = [
         date: "Aug '24",
       },
       {
-        title: 'Generalised Gossipsub specification',
-        url: 'https://github.com/libp2p/specs/pull/664',
-        type: 'specs',
-        date: "Mar '25",
-      },
-      {
         title: 'Gossipsub v2.0 specification',
         url: 'https://github.com/libp2p/specs/pull/653',
         type: 'specs',
         date: "Dec '24",
+      },
+      {
+        title: 'Generalised Gossipsub specification',
+        url: 'https://github.com/libp2p/specs/pull/664',
+        type: 'specs',
+        date: "Mar '25",
       },
       {
         title: 'Eth P2P: How Ethereum Talks to Itself',
@@ -371,10 +371,10 @@ export const researchTracksData: ResearchTrack[] = [
         type: 'website',
       },
       {
-        title: 'Toward a General Model for Proposer Selection Mechanism Design',
-        url: 'https://ethresear.ch/t/toward-a-general-model-for-proposer-selection-mechanism-design/21790',
+        title: 'Unbundling Staking: Towards Rainbow Staking',
+        url: 'https://ethresear.ch/t/unbundling-staking-towards-rainbow-staking/18683',
         type: 'article',
-        date: "Feb '25",
+        date: "Feb '24",
       },
       {
         title: 'Attester-Proposer Separation Seminar Presentation at King\'s College London',
@@ -383,10 +383,10 @@ export const researchTracksData: ResearchTrack[] = [
         date: "Jan '25",
       },
       {
-        title: 'Unbundling Staking: Towards Rainbow Staking',
-        url: 'https://ethresear.ch/t/unbundling-staking-towards-rainbow-staking/18683',
+        title: 'Toward a General Model for Proposer Selection Mechanism Design',
+        url: 'https://ethresear.ch/t/toward-a-general-model-for-proposer-selection-mechanism-design/21790',
         type: 'article',
-        date: "Feb '24",
+        date: "Feb '25",
       },
       {
         title: 'Rainbow Roles Incentives: ABPS, FOCIL + AS',
