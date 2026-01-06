@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Shield, Lock, FileCheck, Cpu, Feather, FileCode, Waypoints } from 'lucide-react';
+import { Shield, Lock, FileCheck, Cpu, Feather, FileCode, Waypoints, Split } from 'lucide-react';
 
 export interface ResearchTrack {
   id: string;
@@ -39,7 +39,7 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <Lock className="h-5 w-5" />,
     colorClass: 'blue',
     status: 'active',
-    progress: 10,
+    progress: 50,
     lead: 'Dmitry Khovratovich',
     leadLink: 'https://x.com/Khovr',
     tags: ['Post-Quantum Signatures', 'Chain Snarkification'],
@@ -162,7 +162,7 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <Cpu className="h-5 w-5" />,
     colorClass: 'amber',
     status: 'active',
-    progress: 10,
+    progress: 50,
     lead: 'Thomas Coratger',
     leadLink: 'https://x.com/tcoratger',
     tags: ['Post-Quantum Signatures', 'Chain Snarkification'],
@@ -285,7 +285,7 @@ export const researchTracksData: ResearchTrack[] = [
     colorClass: 'teal',
     status: 'active',
     progress: 10,
-    lead: 'Pop',
+    lead: 'Raúl Kripalani',
     leadLink: 'https://github.com/ppopth',
     tags: ['Networking'],
     milestones: [
@@ -315,6 +315,51 @@ export const researchTracksData: ResearchTrack[] = [
         title: 'Gossipsub v2.0 specification',
         url: 'https://github.com/libp2p/specs/pull/653',
         type: 'specs',
+      },
+    ],
+  },
+  {
+    id: 'attester-proposer-separation',
+    title: 'Attester-Proposer Separation',
+    description:
+      'Separates the roles of block proposers and attesters in Ethereum consensus to reduce \
+      centralization pressures, enable more efficient MEV handling, and improve overall network \
+      decentralization.',
+    icon: <Split className="h-5 w-5" />,
+    colorClass: 'pink',
+    status: 'active',
+    progress: 10,
+    lead: 'TBD',
+    leadLink: '',
+    tags: ['Consensus'],
+    milestones: [
+      { title: 'Exploratory research', completed: false },
+    ],
+    resources: [
+      {
+        title: 'Attester-Proposer Separation Tracker',
+        url: 'https://efdn.notion.site/Attester-Proposer-Separation-Tracker-15bd9895554180c2ac75cb40878ecd33',
+        type: 'website',
+      },
+      {
+        title: 'Toward a General Model for Proposer Selection Mechanism Design',
+        url: 'https://ethresear.ch/t/toward-a-general-model-for-proposer-selection-mechanism-design/21790',
+        type: 'paper',
+      },
+      {
+        title: 'APS Presentation',
+        url: 'https://docs.google.com/presentation/d/1C4Iykpf-zNqCE1TyWxDzzw_A7n52GaUJz01Hw5v-NPo/edit',
+        type: 'presentation',
+      },
+      {
+        title: 'Unbundling Staking: Towards Rainbow Staking',
+        url: 'https://ethresear.ch/t/unbundling-staking-towards-rainbow-staking/18683',
+        type: 'paper',
+      },
+      {
+        title: 'Rainbow Roles Incentives: aBPS, FocilR, AS',
+        url: 'https://ethresear.ch/t/rainbow-roles-incentives-abps-focilr-as/21826',
+        type: 'paper',
       },
     ],
   },

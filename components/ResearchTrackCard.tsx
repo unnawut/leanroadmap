@@ -80,6 +80,14 @@ const colorMap = {
     glow: 'shadow-teal-500/20',
     accent: 'border-teal-200',
   },
+  pink: {
+    bg: 'bg-pink-50',
+    text: 'text-pink-600',
+    progressBg: 'bg-gradient-to-r from-pink-400 to-pink-500',
+    iconBg: 'bg-gradient-to-br from-pink-500 to-pink-600',
+    glow: 'shadow-pink-500/20',
+    accent: 'border-pink-200',
+  },
 } as const;
 
 const defaultColors = {
@@ -248,12 +256,12 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                 <h4 className="font-semibold text-xs uppercase tracking-wide text-slate-500 mb-3">
                   Resources
                 </h4>
-                <div className="space-y-2">
+                <div>
                   {track.resources.map((resource, index) => (
                     <Link
                       href={resource.url}
                       key={index}
-                      className={`flex items-center gap-2 text-sm py-1.5 px-2 -mx-2 rounded-lg transition-colors ${
+                      className={`flex items-center gap-2 text-sm px-2 -mx-2 rounded-lg transition-colors ${
                         isInactive
                           ? 'text-slate-400 hover:text-slate-500 hover:bg-slate-100/50'
                           : 'text-slate-600 hover:text-slate-900 hover:bg-white'
@@ -264,7 +272,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                       <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-60" />
                       <span className="truncate">{resource.title}</span>
                       <span
-                        className={`text-[10px] uppercase tracking-wide ml-auto shrink-0 px-1.5 py-0.5 rounded ${isInactive ? 'text-slate-300 bg-slate-100' : 'text-slate-400 bg-slate-100'}`}
+                        className={`text-[10px] uppercase tracking-wide ml-auto shrink-0 px-1.5 py-0.5 ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
                       >
                         {resource.type}
                       </span>
