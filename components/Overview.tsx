@@ -10,55 +10,44 @@ export function Overview() {
       {/* Long-term Vision Card */}
       <Card className="col-span-1 bg-white border-slate-200 shadow-sm">
         <CardHeader>
-          <CardTitle>Long-term Vision</CardTitle>
+          <CardTitle>Key Ideas</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2 p-0 md:pl-5 text-sm list-none">
             <li className="flex items-start">
               <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
               <span>
-                Complete the roadmap in 4-5 years so Ethereum can go into maintenance mode
+                <strong>Lean Consensus:</strong> A complete redesign of Ethereum&apos;s consensus
+                layer — hardened for security, decentralization, and finality in seconds
               </span>
-            </li>
-            <li className="flex items-start">
-              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
-              <span>Start thinking about ossification like Bitcoin</span>
             </li>
             <li className="flex items-start">
               <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
               <span>
-                Renaissance of solo validating through "Zen Staking," "Fish Staking," and "Fiverr
-                Staking"
+                <strong>Lean Cryptography:</strong> Hash-based signatures ready for both SNARKs and
+                quantum computers — one simple building block powering everything
               </span>
             </li>
             <li className="flex items-start">
               <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
-              <span>Clean and simple protocol worthy of a neutral global base layer</span>
-            </li>
-            <li className="flex items-start">
-              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
-              <span>Fully verifying light clients that can work on even the smallest devices</span>
-            </li>
-          </ul>
-        </CardContent>
-        <CardHeader>
-          <CardTitle>Rationales</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 p-0 md:pl-5 text-sm list-none">
-            <li className="flex items-start">
-              <Check className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
               <span>
-                Small incremental upgrades are only applicable to certain types of changes
+                <strong>Lean Governance:</strong> Batched upgrades instead of endless small changes
+                — paying down 10 years of technical debt in one go
               </span>
             </li>
             <li className="flex items-start">
-              <Check className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
-              <span>Governance batching optimization: batch everything to a single fork</span>
+              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>
+                <strong>Faster Finality:</strong> Transactions confirmed in seconds instead
+                of ~15 minutes
+              </span>
             </li>
             <li className="flex items-start">
-              <Check className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
-              <span>Avoid existing technical debts</span>
+              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
+              <span>
+                <strong>Lean Craft:</strong> Minimalism, modularity, and formal verification — when
+                we can go the extra mile, we do
+              </span>
             </li>
           </ul>
         </CardContent>

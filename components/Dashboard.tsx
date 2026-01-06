@@ -58,7 +58,7 @@ export function Dashboard() {
       </section>
 
       <section className="space-y-4">
-        <h2>Lean Consensus Overview</h2>
+        <h2>Overview</h2>
         <Overview />
       </section>
 
