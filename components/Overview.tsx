@@ -38,13 +38,6 @@ export function Overview() {
             <li className="flex items-start">
               <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
               <span>
-                <strong>Faster Finality:</strong> Transactions confirmed in seconds instead
-                of ~15 minutes
-              </span>
-            </li>
-            <li className="flex items-start">
-              <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
-              <span>
                 <strong>Lean Craft:</strong> Minimalism, modularity, and formal verification — when
                 we can go the extra mile, we do
               </span>
