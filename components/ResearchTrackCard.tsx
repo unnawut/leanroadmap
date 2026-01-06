@@ -88,6 +88,14 @@ const colorMap = {
     glow: 'shadow-pink-500/20',
     accent: 'border-pink-200',
   },
+  orange: {
+    bg: 'bg-orange-50',
+    text: 'text-orange-600',
+    progressBg: 'bg-gradient-to-r from-orange-400 to-orange-500',
+    iconBg: 'bg-gradient-to-br from-orange-500 to-orange-600',
+    glow: 'shadow-orange-500/20',
+    accent: 'border-orange-200',
+  },
 } as const;
 
 const defaultColors = {

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Shield, Lock, FileCheck, Cpu, Feather, FileCode, Waypoints, Split } from 'lucide-react';
+import { Shield, Lock, FileCheck, Cpu, Feather, FileCode, Waypoints, Split, Zap } from 'lucide-react';
 
 export interface ResearchTrack {
   id: string;
@@ -239,7 +239,7 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <FileCode className="h-5 w-5" />,
     colorClass: 'indigo',
     status: 'active',
-    progress: 10,
+    progress: 40,
     lead: 'Alex Hicks',
     leadLink: 'https://x.com/alexanderlhicks',
     tags: ['Security Hardening'],
@@ -284,10 +284,10 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <Waypoints className="h-5 w-5" />,
     colorClass: 'teal',
     status: 'active',
-    progress: 10,
+    progress: 30,
     lead: 'Raúl Kripalani',
     leadLink: 'https://github.com/ppopth',
-    tags: ['Networking'],
+    tags: ['Networking', 'Performance'],
     milestones: [
       {
         title: 'Practical Rateless Set Reconciliation research',
@@ -328,10 +328,10 @@ export const researchTracksData: ResearchTrack[] = [
     icon: <Split className="h-5 w-5" />,
     colorClass: 'pink',
     status: 'active',
-    progress: 10,
+    progress: 20,
     lead: 'TBD',
     leadLink: '',
-    tags: ['Consensus'],
+    tags: ['Consensus', 'Performance'],
     milestones: [
       { title: 'Exploratory research', completed: false },
     ],
@@ -359,6 +359,46 @@ export const researchTracksData: ResearchTrack[] = [
       {
         title: 'Rainbow Roles Incentives: aBPS, FocilR, AS',
         url: 'https://ethresear.ch/t/rainbow-roles-incentives-abps-focilr-as/21826',
+        type: 'paper',
+      },
+    ],
+  },
+  {
+    id: 'faster-finality',
+    title: 'Faster Finality',
+    description:
+      'Reduces Ethereum finality from ~15 minutes to seconds using 3-slot finality (3SF) — a practical \
+      alternative to single-slot finality that balances speed, security, and implementation complexity \
+      while integrating with ePBS, FOCIL, and PeerDAS.',
+    icon: <Zap className="h-5 w-5" />,
+    colorClass: 'orange',
+    status: 'active',
+    progress: 50,
+    lead: 'TBD',
+    leadLink: '',
+    tags: ['Consensus', 'Performance'],
+    milestones: [
+      { title: 'Exploratory research', completed: false },
+    ],
+    resources: [
+      {
+        title: 'A Simple Single Slot Finality Protocol For Ethereum',
+        url: 'https://eprint.iacr.org/2023/280',
+        type: 'paper',
+      },
+      {
+        title: '3-Slot Finality: SSF Is Not About Single Slot',
+        url: 'https://ethresear.ch/t/3-slot-finality-ssf-is-not-about-single-slot/20927',
+        type: 'paper',
+      },
+      {
+        title: 'Integrating 3SF with ePBS, FOCIL, and PeerDAS',
+        url: 'https://ethresear.ch/t/integrating-3sf-with-epbs-focil-and-peerdas/22909',
+        type: 'paper',
+      },
+      {
+        title: 'LMD GHOST with ~256 Validators and a Fast-Following Finality Gadget',
+        url: 'https://ethresear.ch/t/lmd-ghost-with-256-validators-and-a-fast-following-finality-gadget/22856',
         type: 'paper',
       },
     ],
