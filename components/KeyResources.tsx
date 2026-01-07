@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/primitives';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-import { keyResourcesData } from '@/data/key-resources';
+import { keyResourcesData, getYear, formatDate } from '@/data/key-resources';
 
 export function KeyResources() {
   return (
@@ -14,7 +14,9 @@ export function KeyResources() {
         </CardHeader>
         <CardContent className="space-y-4">
           {[2025, 2024].map((year) => {
-            const resourcesForYear = keyResourcesData.filter((r) => r.year === year);
+            const resourcesForYear = keyResourcesData
+              .filter((r) => getYear(r.date) === year)
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
             if (resourcesForYear.length === 0) return null;
             return (
               <div key={year}>
@@ -28,7 +30,7 @@ export function KeyResources() {
                       <a href={resource.url} className="text-blue-600 hover:underline">
                         {resource.title}
                       </a>
-                      <span className="text-gray-500 pl-1">({resource.date})</span>
+                      <span className="text-gray-500 pl-1">({formatDate(resource.date)})</span>
                     </li>
                   ))}
                 </ul>
