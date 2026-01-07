@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Badge } from '@/components/ui/primitives';
 import { Benchmarks } from '@/components/Benchmarks';
 import { ClientImplementations } from '@/components/ClientImplementations';
@@ -13,17 +13,60 @@ import { Overview } from '@/components/Overview';
 
 const LAST_UPDATED = 'January 2026';
 
+const NAV_ITEMS = [
+  { label: 'Overview', id: 'overview' },
+  { label: 'Timeline', id: 'timeline' },
+  { label: 'Benchmarks', id: 'benchmarks' },
+  { label: 'Devnets', id: 'devnets' },
+  { label: 'Research', id: 'research-tracks' },
+  { label: 'Clients', id: 'client-implementations' },
+  { label: 'Videos', id: 'lean-calls' },
+];
+
 export function Dashboard() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('overview');
+  const isClickNavigatingRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
+
+      // Skip scroll-based updates while click navigation is in progress
+      if (isClickNavigatingRef.current) return;
+
+      // Find the active section based on scroll position
+      // Add extra offset so highlight switches when section is ~30% from top of viewport
+      const headerOffset = 80;
+      const viewportOffset = window.innerHeight * 0.3;
+      const scrollPosition = window.scrollY + headerOffset + viewportOffset;
+
+      // Find the section that's currently at the top
+      let currentSection = 'overview';
+      for (const { id } of NAV_ITEMS) {
+        const element = document.getElementById(id);
+        if (element) {
+          const { offsetTop } = element;
+          if (scrollPosition >= offsetTop) {
+            currentSection = id;
+          }
+        }
+      }
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Run once on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (id: string) => {
+    setActiveSection(id);
+    isClickNavigatingRef.current = true;
+    setTimeout(() => {
+      isClickNavigatingRef.current = false;
+    }, 800);
+  };
 
   return (
     <div className="container mx-auto space-y-12 px-8 md:px-6">
@@ -41,19 +84,16 @@ export function Dashboard() {
               </div>
             </div>
             <nav className="hidden md:flex items-center gap-1 ml-auto mr-4">
-              {[
-                { label: 'Overview', id: 'overview' },
-                { label: 'Timeline', id: 'timeline' },
-                { label: 'Benchmarks', id: 'benchmarks' },
-                { label: 'Devnets', id: 'devnets' },
-                { label: 'Research', id: 'research-tracks' },
-                { label: 'Clients', id: 'client-implementations' },
-                { label: 'Videos', id: 'lean-calls' },
-              ].map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="px-3 py-1 text-xs text-slate-300 hover:text-white hover:bg-slate-700/50 rounded transition-colors"
+                  onClick={() => handleNavClick(item.id)}
+                  className={`px-3 py-1 text-xs rounded transition-colors ${
+                    activeSection === item.id
+                      ? 'text-white font-medium bg-teal-600'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                  }`}
                 >
                   {item.label}
                 </a>
@@ -68,7 +108,7 @@ export function Dashboard() {
       </div>
 
       {/* Hero Header */}
-      <header className="relative pt-14 md:pt-16">
+      <header className="relative pt-14 md:pt-12 md:pb-4">
         {/* Decorative background element */}
         <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-teal-100/40 via-amber-50/30 to-transparent rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-amber-100/30 to-transparent rounded-full blur-2xl pointer-events-none" />

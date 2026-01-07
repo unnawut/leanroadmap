@@ -17,18 +17,18 @@ export const callToActionsData: CallToAction[] = [
     description: 'Specifications for the Lean Consensus work',
   },
   {
-    title: 'leanMetrics',
-    url: 'https://github.com/leanEthereum/leanMetrics',
-    icon: BarChart3,
-    type: 'repo',
-    description: 'Specifications for Lean Consensus metrics',
-  },
-  {
     title: 'leanSig',
     url: 'https://github.com/leanEthereum/leanSig',
     icon: KeyRound,
     type: 'repo',
     description: 'Repository for the hash-based signature scheme',
+  },
+  {
+    title: 'leanMetrics',
+    url: 'https://github.com/leanEthereum/leanMetrics',
+    icon: BarChart3,
+    type: 'repo',
+    description: 'Specifications for Lean Consensus metrics',
   },
   {
     title: 'leanMultisig',
