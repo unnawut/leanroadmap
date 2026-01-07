@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { Menu, X } from 'lucide-react';
 import { Badge } from '@/components/ui/primitives';
 import { Benchmarks } from '@/components/Benchmarks';
 import { ClientImplementations } from '@/components/ClientImplementations';
@@ -26,6 +27,7 @@ const NAV_ITEMS = [
 export function Dashboard() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('overview');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isClickNavigatingRef = useRef(false);
 
   useEffect(() => {
@@ -62,6 +64,7 @@ export function Dashboard() {
 
   const handleNavClick = (id: string) => {
     setActiveSection(id);
+    setIsMobileMenuOpen(false);
     isClickNavigatingRef.current = true;
     setTimeout(() => {
       isClickNavigatingRef.current = false;
@@ -99,11 +102,40 @@ export function Dashboard() {
                 </a>
               ))}
             </nav>
-            <span className="flex items-center text-[11px] text-slate-400 font-mono-data px-2.5 py-1 rounded-full border border-slate-600">
+            <span className="hidden md:flex items-center text-[11px] text-slate-400 font-mono-data px-2.5 py-1 rounded-full border border-slate-600">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse" />
               {LAST_UPDATED}
             </span>
+            {/* Mobile hamburger button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded transition-colors ml-auto"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
+          {/* Mobile menu dropdown */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden border-t border-slate-700/60 py-2 px-4">
+              <nav className="flex flex-col gap-1">
+                {NAV_ITEMS.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={() => handleNavClick(item.id)}
+                    className={`px-3 py-2 text-sm rounded transition-colors ${
+                      activeSection === item.id
+                        ? 'text-white font-medium bg-teal-600'
+                        : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          )}
         </div>
       </div>
 
