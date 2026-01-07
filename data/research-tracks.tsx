@@ -162,8 +162,8 @@ export const researchTracksData: ResearchTrack[] = [
     ],
   },
   {
-    id: 'minimal-zkvm',
-    title: 'Minimal Zero-Knowledge Virtual Machines',
+    id: 'signature-aggregation',
+    title: 'Post-Quantum Signature Aggregation with zkVMs',
     description:
       'Explore minimal zero-knowledge virtual machines (zkVMs) specifically optimized for \
       signature aggregation, including various options like Binus M3, SP1, KRU, STU, Jolt, and OpenVM.',
@@ -211,7 +211,13 @@ export const researchTracksData: ResearchTrack[] = [
         title: 'Circuit gadgets',
         url: 'https://hackmd.io/@tcoratger/SyWbmVPckx',
         type: 'website',
-        date: '2025-02'
+        date: '2025-02',
+      },
+      {
+        title: 'Post Quantum Signature Aggregation: a Folding Approach',
+        url: 'https://ethresear.ch/t/post-quantum-signature-aggregation-a-folding-approach/23639',
+        type: 'article',
+        date: '2025-12',
       },
     ],
   },

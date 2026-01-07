@@ -11,7 +11,7 @@ import { Timeline } from '@/components/timeline/Timeline';
 import { Footer } from '@/components/Footer';
 import { ResearchTracks } from '@/components/research-tracks/ResearchTracks';
 import { Overview } from '@/components/overview/Overview';
-import { KeyResources } from '@/components/key-resources/KeyResources';
+import { LearningResources } from '@/components/learning-resources/LearningResources';
 
 const LAST_UPDATED = '2026-01';
 const formatDate = (date: string) =>
@@ -20,11 +20,11 @@ const formatDate = (date: string) =>
 const NAV_ITEMS = [
   { label: 'Overview', id: 'overview' },
   { label: 'Timeline', id: 'timeline' },
-  { label: 'Resources', id: 'key-resources' },
   { label: 'Benchmarks', id: 'benchmarks' },
   { label: 'Devnets', id: 'devnets' },
   { label: 'Research', id: 'research-tracks' },
   { label: 'Clients', id: 'client-implementations' },
+  { label: 'Learning', id: 'learning-resources' },
   { label: 'Videos', id: 'lean-calls' },
 ];
 
@@ -194,11 +194,6 @@ export function Dashboard() {
         <Timeline />
       </section>
 
-      <section id="key-resources" className="space-y-4 scroll-mt-20">
-        <h2>Key Resources</h2>
-        <KeyResources />
-      </section>
-
       <section id="benchmarks" className="space-y-4 scroll-mt-20">
         <h2>Benchmarks</h2>
         <Benchmarks />
@@ -218,8 +213,13 @@ export function Dashboard() {
         <ClientImplementations />
       </section>
 
+      <section id="learning-resources" className="space-y-4 scroll-mt-20">
+        <h2>Learning Resources</h2>
+        <LearningResources />
+      </section>
+
       <section id="lean-calls" className="space-y-4 scroll-mt-20">
-        <h2>Lean Calls</h2>
+        <h2>leanConsensus Calls</h2>
         <LeanCalls />
       </section>
 
