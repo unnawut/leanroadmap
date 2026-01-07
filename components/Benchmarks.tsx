@@ -48,16 +48,21 @@ export function Benchmarks() {
                       <span className="text-[10px] text-slate-400 mt-0.5">{metric.note}</span>
                     )}
                   </div>
-                  <div className="flex items-baseline gap-1 shrink-0 ml-4">
-                    <span
-                      className={`font-mono-data text-lg font-semibold ${
-                        metric.highlight ? 'text-teal-600' : 'text-slate-800'
-                      }`}
-                    >
-                      {metric.value}
-                    </span>
-                    {metric.unit && (
-                      <span className="text-xs text-slate-500">{metric.unit}</span>
+                  <div className="flex flex-col items-end shrink-0 ml-4">
+                    <div className="flex items-baseline gap-1">
+                      <span
+                        className={`font-mono-data text-lg font-semibold ${
+                          metric.highlight ? 'text-teal-600' : 'text-slate-800'
+                        }`}
+                      >
+                        {metric.value}
+                      </span>
+                      {metric.unit && (
+                        <span className="text-xs text-slate-500">{metric.unit}</span>
+                      )}
+                    </div>
+                    {metric.subValue && (
+                      <span className="text-[10px] text-slate-400">{metric.subValue}</span>
                     )}
                   </div>
                 </div>

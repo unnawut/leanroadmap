@@ -11,27 +11,11 @@ import {
   ReferenceLine,
   ResponsiveContainer,
 } from 'recharts';
-
-const data = [
-  { date: '08/26', i9: 35 },
-  { date: '09/02', i9: 37 },
-  { date: '09/05', i9: 53 },
-  { date: '09/09', i9: 62 },
-  { date: '09/12', i9: 76 },
-  { date: '09/19', i9: 107 },
-  { date: '09/27', i9: 137 },
-  { date: '10/02', i9: 172 },
-  { date: '10/05', i9: 177 },
-  { date: '10/07', i9: 193 },
-  { date: '10/12', i9: 214 },
-  { date: '10/14', i9: 234, m4: 465 },
-  { date: '10/21', i9: 255 },
-  { date: '10/28', i9: 314, m4: 555 },
-  { date: '11/04', i9: 350, m4: 660 },
-  { date: '11/11', i9: 380, m4: 720 },
-  { date: '12/02', m4: 940, m4vm: 755 },
-  { date: '12/05', m4: 970, m4vm: 815 },
-];
+import {
+  xmssAggregationData,
+  xmssSeriesConfig,
+  XMSS_TARGET,
+} from '@/data/xmss-aggregation';
 
 export function XmssAggregationChart() {
   return (
@@ -41,7 +25,7 @@ export function XmssAggregationChart() {
       </h4>
       <ResponsiveContainer width="100%" height={240}>
         <LineChart
-          data={data}
+          data={xmssAggregationData}
           margin={{ top: 0, right: 40, left: 0, bottom: 0 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -66,32 +50,24 @@ export function XmssAggregationChart() {
               fontSize: '12px',
             }}
             formatter={(value: number, name: string) => {
-              const labels: Record<string, string> = {
-                i9: 'i9-12900H',
-                m4: 'M4 Max',
-                m4vm: 'M4 Max (lean-vm-simple)',
-              };
-              return [value, labels[name] || name];
+              const config = xmssSeriesConfig[name as keyof typeof xmssSeriesConfig];
+              return [value, config?.label || name];
             }}
           />
           <Legend
             wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }}
             formatter={(value: string) => {
-              const labels: Record<string, string> = {
-                i9: 'i9-12900H',
-                m4: 'M4 Max',
-                m4vm: 'M4 Max (lean-vm-simple)',
-              };
-              return labels[value] || value;
+              const config = xmssSeriesConfig[value as keyof typeof xmssSeriesConfig];
+              return config?.label || value;
             }}
           />
           <ReferenceLine
-            y={1000}
+            y={XMSS_TARGET}
             stroke="#555555"
             strokeDasharray="7 3"
             strokeWidth={2}
             label={{
-              value: 'Target (1000/s)',
+              value: `Target (${XMSS_TARGET}/s)`,
               position: 'insideTopLeft',
               fontSize: 11,
               fill: '#555555',
@@ -100,25 +76,25 @@ export function XmssAggregationChart() {
           <Line
             type="monotone"
             dataKey="i9"
-            stroke="#2e86ab"
+            stroke={xmssSeriesConfig.i9.color}
             strokeWidth={2}
-            dot={{ fill: '#2e86ab', strokeWidth: 0, r: 4 }}
+            dot={{ fill: xmssSeriesConfig.i9.color, strokeWidth: 0, r: 4 }}
             connectNulls
           />
           <Line
             type="monotone"
             dataKey="m4"
-            stroke="#ef4444"
+            stroke={xmssSeriesConfig.m4.color}
             strokeWidth={2}
-            dot={{ fill: '#ef4444', strokeWidth: 0, r: 4 }}
+            dot={{ fill: xmssSeriesConfig.m4.color, strokeWidth: 0, r: 4 }}
             connectNulls
           />
           <Line
             type="monotone"
             dataKey="m4vm"
-            stroke="#22c55e"
+            stroke={xmssSeriesConfig.m4vm.color}
             strokeWidth={2}
-            dot={{ fill: '#22c55e', strokeWidth: 0, r: 4 }}
+            dot={{ fill: xmssSeriesConfig.m4vm.color, strokeWidth: 0, r: 4 }}
             connectNulls
           />
         </LineChart>
