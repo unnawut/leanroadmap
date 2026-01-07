@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/primit
 import { benchmarksData } from '@/data/benchmarks';
 import { XmssAggregationChart } from '@/components/XmssAggregationChart';
 import { LeanSigTimingChart } from '@/components/LeanSigTimingChart';
-import { AnimatedValue } from '@/components/AnimatedValue';
+import { AnimatedValue } from '@/components/ui/AnimatedValue';
 import { Activity } from 'lucide-react';
 
 function getPercentageColor(subValue: string, label: string): string {
