@@ -17,6 +17,10 @@ import {
   XMSS_TARGET,
 } from '@/data/xmss-aggregation';
 
+const formatDate = (date: string): string => {
+  return new Date(date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+};
+
 export function XmssAggregationChart() {
   return (
     <div className="w-full">
@@ -31,6 +35,7 @@ export function XmssAggregationChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
           <XAxis
             dataKey="date"
+            tickFormatter={formatDate}
             tick={{ fontSize: 11, fill: '#64748b' }}
             tickLine={{ stroke: '#cbd5e1' }}
             axisLine={{ stroke: '#cbd5e1' }}

@@ -5,6 +5,11 @@ import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import { LeanCall, leanCallsData, determineLeanCallStatus } from '@/data/lean-calls';
 
+const formatDate = (date: string): string => {
+  if (date === 'TBD') return 'TBD';
+  return new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+};
+
 // Helper function to extract YouTube video ID from URL
 function getYoutubeVideoId(url: string): string | null {
   if (url === '#') return null;
@@ -100,7 +105,7 @@ function LeanCallCard({ call }: { call: LeanCall }) {
             )}
           </div>
         )}
-        <p className="text-xs text-slate-500 mb-2">{call.date}</p>
+        <p className="text-xs text-slate-500 mb-2">{formatDate(call.date)}</p>
         <p className="text-sm text-slate-600">{call.summary}</p>
         {call.resources && call.resources.length > 0 && (
           <div className="mt-4 space-y-2">

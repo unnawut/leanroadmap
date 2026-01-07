@@ -5,6 +5,12 @@ import { Devnet } from '@/data/devnets';
 import { CheckCircle2, Circle, Clock, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
+const formatDate = (date: string, status: Devnet['status']): string => {
+  const formatted = new Date(date).toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+  const prefix = status === 'completed' ? 'Completed' : 'Target';
+  return `${prefix}: ${formatted}`;
+};
+
 const statusConfig = {
   completed: {
     icon: CheckCircle2,
@@ -44,7 +50,7 @@ export function DevnetCard({ devnet }: DevnetCardProps) {
               {devnet.name}
             </h3>
             {devnet.date && (
-              <span className="text-xs text-slate-400">{devnet.date}</span>
+              <span className="text-xs text-slate-400">{formatDate(devnet.date, devnet.status)}</span>
             )}
           </div>
           <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full ${status.bg}/10`}>

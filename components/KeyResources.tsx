@@ -2,7 +2,15 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/primitives';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-import { keyResourcesData, getYear, formatDate } from '@/data/key-resources';
+import { keyResourcesData } from '@/data/key-resources';
+
+const getYear = (date: string): number => {
+  return new Date(date).getFullYear();
+};
+
+const formatDate = (date: string): string => {
+  return new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+};
 
 export function KeyResources() {
   return (

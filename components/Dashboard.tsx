@@ -13,7 +13,9 @@ import { ResearchTracks } from '@/components/ResearchTracks';
 import { Overview } from '@/components/Overview';
 import { KeyResources } from '@/components/KeyResources';
 
-const LAST_UPDATED = 'January 2026';
+const LAST_UPDATED = '2026-01';
+const formatDate = (date: string) =>
+  new Date(date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
 const NAV_ITEMS = [
   { label: 'Overview', id: 'overview' },
@@ -106,7 +108,7 @@ export function Dashboard() {
             </nav>
             <span className="hidden md:flex items-center text-[11px] text-slate-400 font-mono-data px-2.5 py-1 rounded-full border border-slate-600">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse" />
-              {LAST_UPDATED}
+              {formatDate(LAST_UPDATED)}
             </span>
             {/* Mobile hamburger button */}
             <button
@@ -176,7 +178,7 @@ export function Dashboard() {
               className="bg-white/80 backdrop-blur-sm border-slate-200/80 text-slate-600 px-3 py-1.5 text-xs font-mono-data shadow-sm"
             >
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse" />
-              Last updated: {LAST_UPDATED}
+              Last updated: {formatDate(LAST_UPDATED)}
             </Badge>
           </div>
         </div>

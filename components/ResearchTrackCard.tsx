@@ -16,6 +16,10 @@ import {
 import type { ResearchTrack } from '@/data/research-tracks';
 import Link from 'next/link';
 
+const formatDate = (date: string): string => {
+  return new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+};
+
 interface ResearchTrackCardProps {
   track: ResearchTrack;
   isExpanded: boolean;
@@ -251,7 +255,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                           <p
                             className={`text-xs font-mono-data mt-0.5 ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
                           >
-                            {milestone.date}
+                            {formatDate(milestone.date)}
                           </p>
                         )}
                       </div>
@@ -285,7 +289,7 @@ export function ResearchTrackCard({ track, isExpanded, onToggle }: ResearchTrack
                           <span
                             className={`text-[10px] font-mono-data ${isInactive ? 'text-slate-300' : 'text-slate-400'}`}
                           >
-                            {resource.date}
+                            {formatDate(resource.date)}
                           </span>
                         )}
                         <span

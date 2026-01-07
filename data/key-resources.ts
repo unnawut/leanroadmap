@@ -7,16 +7,6 @@ export type KeyResource = {
   date: string; // Format: "YYYY-MM" e.g. "2024-11"
 };
 
-// Helper to extract year from date string
-export const getYear = (date: string): number => {
-  return new Date(date).getFullYear();
-};
-
-// Helper to format date for display
-export const formatDate = (date: string): string => {
-  return new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-};
-
 export const keyResourcesData: KeyResource[] = [
   {
     icon: Youtube,

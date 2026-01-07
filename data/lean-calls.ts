@@ -31,7 +31,7 @@ export const leanCallsData: LeanCall[] = [
   {
     id: 'call-1',
     title: 'Lean Call #1: Social Layer Updates',
-    date: 'February 14, 2025',
+    date: '2025-02-14',
     summary:
       'The kickoff call covering social layer progress, funding structures, legal updates, introductions of research specialists and client teams, and coordinator presentations',
     thumbnail: null,
@@ -52,7 +52,7 @@ export const leanCallsData: LeanCall[] = [
   {
     id: 'call-2',
     title: 'Lean Call #2: Post-Quantum Security',
-    date: 'February 28, 2025',
+    date: '2025-02-28',
     summary:
       'Technical updates on post-quantum cryptography solutions, featuring technical presentations from researchers on signature schemes, hash functions, minimal zkVMs, and formal verification.',
     thumbnail: null,
@@ -93,7 +93,7 @@ export const leanCallsData: LeanCall[] = [
   {
     id: 'call-3',
     title: 'Lean Call #3: P2P Networking',
-    date: 'April 4, 2025',
+    date: '2025-04-04',
     summary: 'Discussion on the latest developments in peer-to-peer networking.',
     thumbnail: null,
     youtubeUrl: 'https://www.youtube.com/watch?v=dJkuwuh2Nrs',
@@ -153,7 +153,7 @@ export const leanCallsData: LeanCall[] = [
   {
     id: 'call-4',
     title: 'Lean Call #4: Exit Queue',
-    date: 'April 18, 2025',
+    date: '2025-04-18',
     summary:
       'Discussion of Ethereum validator exit mechanisms and proposals to improve exit queue flexibility while maintaining protocol security.',
     thumbnail: null,
@@ -179,7 +179,7 @@ export const leanCallsData: LeanCall[] = [
   {
     id: 'call-5',
     title: 'Lean Call #5: APS (Attester-Proposer Separation)',
-    date: 'May 2, 2025',
+    date: '2025-05-02',
     summary:
       'Exploration of the Attester-Proposer Separation (APS) concept, its benefits, and potential applications for Lean Consensus.',
     thumbnail: null,
@@ -200,7 +200,7 @@ export const leanCallsData: LeanCall[] = [
   {
     id: 'call-6',
     title: 'Lean Call #6: 3SF (Finality)',
-    date: 'May 16, 2025',
+    date: '2025-05-16',
     summary:
       'Discussion on the finality of the 3SF protocol, including its implementation and implications on the network.',
     thumbnail: null,
@@ -221,7 +221,7 @@ export const leanCallsData: LeanCall[] = [
   {
     id: 'call-7',
     title: 'Lean Call #7: PQ Sub-Spec',
-    date: 'September 5, 2025',
+    date: '2025-09-05',
     summary:
       'In-depth discussion on the Post-Quantum (PQ) sub-specification, focusing on its cryptographic aspects and integration into Lean Consensus.',
     thumbnail: null,

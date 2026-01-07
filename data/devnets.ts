@@ -11,7 +11,7 @@ export interface Devnet {
   results?: string[];
   specs?: string[];
   clients?: string[];
-  date?: string;
+  date?: string; // Format: "YYYY-MM" e.g. "2025-10"
   links?: DevnetLink[];
 }
 
@@ -20,7 +20,7 @@ export const devnetsData: Devnet[] = [
     id: 'pq-devnet-0',
     name: 'pq-devnet-0',
     status: 'completed',
-    date: "Completed: Oct '25",
+    date: '2025-10',
     goals: [
       'Create leanSpec framework',
       'Multi-client coordination (no PQ sigs yet)',
@@ -31,7 +31,6 @@ export const devnetsData: Devnet[] = [
       'Initial client specs established',
       'Ream, Zeam, Qlean clients interop achieved with modified 3SF-mini consensus',
     ],
-    specs: ['leanSpec 4b750f2'],
     clients: ['Ream', 'Zeam', 'Qlean'],
     links: [
       { title: 'High-level specification', url: 'https://github.com/leanEthereum/pm/blob/main/breakout-rooms/leanConsensus/pq-interop/pq-devnet-0.md' },
@@ -42,7 +41,7 @@ export const devnetsData: Devnet[] = [
     id: 'pq-devnet-1',
     name: 'pq-devnet-1',
     status: 'completed',
-    date: "Completed: Dec '25",
+    date: '2025-12',
     goals: [
       'Integrate leanSig signing & verification',
       'Apply basic signature aggregation (by concatenation)',
@@ -52,7 +51,6 @@ export const devnetsData: Devnet[] = [
       'leanSig signing & verification integrated in clients',
       'Client interop with PQ signing & verification achieved',
     ],
-    specs: ['leanSpec 050fa4a', 'leanSig f10dcbe', 'leanMetrics e077ac2'],
     clients: ['Ream', 'Zeam', 'Qlean', 'Lantern', 'Lighthouse'],
     links: [
       { title: 'High-level specification', url: 'https://github.com/leanEthereum/pm/blob/main/breakout-rooms/leanConsensus/pq-interop/pq-devnet-1.md' },
@@ -62,12 +60,11 @@ export const devnetsData: Devnet[] = [
     id: 'pq-devnet-2',
     name: 'pq-devnet-2',
     status: 'active',
-    date: "Target: Jan '26",
+    date: '2026-01',
     goals: [
       'Integrate leanMultisig aggregation',
       'Set baseline performance metrics for PQ signature aggregation',
     ],
-    specs: ['leanSpec main', 'leanSig adad238', 'leanMultisig main'],
     clients: ['Ream', 'Zeam', 'Qlean', 'Lantern', 'Lighthouse'],
     links: [
       { title: 'High-level specification', url: 'https://github.com/leanEthereum/pm/blob/main/breakout-rooms/leanConsensus/pq-interop/pq-devnet-2.md' },
