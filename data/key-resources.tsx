@@ -5,6 +5,7 @@ export type KeyResource = {
   title: string;
   url: string;
   date: string;
+  year: number;
 };
 
 export const keyResourcesData: KeyResource[] = [
@@ -13,59 +14,55 @@ export const keyResourcesData: KeyResource[] = [
     title: 'Keynote: [title redacted] at Devcon SEA',
     url: 'https://www.youtube.com/watch?v=lRqnFrqpq4k',
     date: 'Nov 2024',
+    year: 2024,
   },
   {
     icon: Youtube,
     title: 'Ethereum Roadmap & Beamchain at Bankless Summit',
     url: 'https://www.youtube.com/watch?v=8mJDt8TGebc',
     date: 'Nov 2024',
+    year: 2024,
   },
   {
     icon: Youtube,
     title: "Deep Dive into Ethereum's Beam Chain with The Defiant",
     url: 'https://www.youtube.com/watch?v=88FDeg5JaUk',
     date: 'Nov 2024',
+    year: 2024,
   },
   {
     icon: Youtube,
     title: 'Beam chain tldr at Devcon SEA Community-Led Session',
     url: 'https://youtu.be/o8n-MCAnxso?si=OQiZl3vrT9ktdzgi&t=2854',
     date: 'Nov 2024',
+    year: 2024,
   },
   {
     icon: Youtube,
     title: "Ethereum's Three Front War on Bankless Podcast",
     url: 'https://youtu.be/jUFVOUq0-fc?si=4ayhCrWKLNiv2q10&t=2936',
     date: 'Dec 2024',
+    year: 2024,
   },
   {
     icon: FileText,
     title: 'Future of Ethereum: Beam Chain by Seungmin Jeon',
     url: 'https://medium.com/@organmo/future-of-ethereum-1-beam-chain-52492e39af62',
     date: 'Jan 2025',
+    year: 2025,
   },
   {
     icon: Twitter,
     title: 'Twitter post on the beam chain roadmap by Vitalik Buterin',
     url: 'https://x.com/VitalikButerin/status/1885046277932552697',
     date: 'Jan 2025',
+    year: 2025,
   },
   {
     icon: FileText,
     title: 'lean Ethereum by Justin Drake',
     url: 'https://blog.ethereum.org/2025/07/31/lean-ethereum',
     date: 'July 2025',
-  },
-  {
-    icon: Code,
-    title: 'Lean Ethereum Specifications',
-    url: 'https://github.com/leanEthereum/leanSpec',
-    date: 'September 2025',
-  },
-  {
-    icon: Youtube,
-    title: 'lean Ethereum | part I',
-    url: 'https://www.youtube.com/watch?v=WaNgzP3OlWk',
-    date: 'Dec 2025',
+    year: 2025,
   },
 ];

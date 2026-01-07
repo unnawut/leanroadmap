@@ -11,12 +11,14 @@ import { Timeline } from '@/components/Timeline';
 import { Footer } from '@/components/Footer';
 import { ResearchTracks } from '@/components/ResearchTracks';
 import { Overview } from '@/components/Overview';
+import { KeyResources } from '@/components/KeyResources';
 
 const LAST_UPDATED = 'January 2026';
 
 const NAV_ITEMS = [
   { label: 'Overview', id: 'overview' },
   { label: 'Timeline', id: 'timeline' },
+  { label: 'Resources', id: 'key-resources' },
   { label: 'Benchmarks', id: 'benchmarks' },
   { label: 'Devnets', id: 'devnets' },
   { label: 'Research', id: 'research-tracks' },
@@ -188,6 +190,11 @@ export function Dashboard() {
       <section id="timeline" className="space-y-4 scroll-mt-20">
         <h2>Timeline</h2>
         <Timeline />
+      </section>
+
+      <section id="key-resources" className="space-y-4 scroll-mt-20">
+        <h2>Key Resources</h2>
+        <KeyResources />
       </section>
 
       <section id="benchmarks" className="space-y-4 scroll-mt-20">

@@ -1,4 +1,4 @@
-import { BookOpen, BarChart3, KeyRound, Package, Youtube, MessageCircle, LucideIcon } from 'lucide-react';
+import { BookOpen, BarChart3, KeyRound, Package, Youtube, MessageCircle, Twitter, LucideIcon } from 'lucide-react';
 
 export interface CallToAction {
   title: string;
@@ -21,14 +21,14 @@ export const callToActionsData: CallToAction[] = [
     url: 'https://github.com/leanEthereum/leanSig',
     icon: KeyRound,
     type: 'repo',
-    description: 'Repository for the hash-based signature scheme',
+    description: 'Post-quantum signature scheme reference implementation',
   },
   {
     title: 'leanMultisig',
     url: 'https://github.com/leanEthereum/leanMultisig',
     icon: Package,
     type: 'repo',
-    description: 'Repository for the signature aggregation scheme',
+    description: 'Post-quantum signature aggregation scheme reference implementation',
   },
   {
     title: 'leanMetrics',
@@ -50,5 +50,12 @@ export const callToActionsData: CallToAction[] = [
     icon: MessageCircle,
     type: 'community',
     description: 'Join the #post-quantum channel',
+  },
+  {
+    title: '@leanEthereum',
+    url: 'https://x.com/leanEthereum',
+    icon: Twitter,
+    type: 'community',
+    description: 'Follow for updates on X',
   },
 ];
