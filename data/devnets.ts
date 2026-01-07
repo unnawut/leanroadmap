@@ -35,7 +35,7 @@ export const devnetsData: Devnet[] = [
     clients: ['Ream', 'Zeam', 'Qlean'],
     links: [
       { title: 'High-level specification', url: 'https://github.com/leanEthereum/pm/blob/main/breakout-rooms/leanConsensus/pq-interop/pq-devnet-0.md' },
-      { title: 'Summary by ReamLabs', url: 'https://hackmd.io/@reamlabs/ryYUl04Rle'},
+      { title: 'Recap by ReamLabs', url: 'https://hackmd.io/@reamlabs/ryYUl04Rle'},
     ],
   },
   {

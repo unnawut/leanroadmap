@@ -24,18 +24,18 @@ export const callToActionsData: CallToAction[] = [
     description: 'Repository for the hash-based signature scheme',
   },
   {
-    title: 'leanMetrics',
-    url: 'https://github.com/leanEthereum/leanMetrics',
-    icon: BarChart3,
-    type: 'repo',
-    description: 'Specifications for Lean Consensus metrics',
-  },
-  {
     title: 'leanMultisig',
     url: 'https://github.com/leanEthereum/leanMultisig',
     icon: Package,
     type: 'repo',
     description: 'Repository for the signature aggregation scheme',
+  },
+  {
+    title: 'leanMetrics',
+    url: 'https://github.com/leanEthereum/leanMetrics',
+    icon: BarChart3,
+    type: 'repo',
+    description: 'Specifications for Lean Consensus metrics',
   },
   {
     title: 'PQ Interop Breakout Meetings',
