@@ -103,10 +103,10 @@ export function Overview() {
                 href={cta.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:border-slate-900 hover:shadow-lg hover:shadow-slate-500/10 transition-all duration-300 overflow-hidden"
+                className="group relative flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:border-slate-900 hover:shadow-lg hover:shadow-violet-500/10 transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-600 text-white shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 text-white shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                   <cta.icon className="h-5 w-5" />
                 </div>
                 <div className="relative flex-1 min-w-0">

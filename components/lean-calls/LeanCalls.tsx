@@ -54,7 +54,7 @@ function LeanCallCard({ call }: { call: LeanCall }) {
     >
       <div className="relative">
         {call.youtubeUrl !== '#' && getYoutubeVideoId(call.youtubeUrl) ? (
-          <div className="w-full h-48">
+          <div className="w-full h-56">
             <iframe
               src={`https://www.youtube.com/embed/${getYoutubeVideoId(call.youtubeUrl)}`}
               title={call.title}
@@ -70,7 +70,7 @@ function LeanCallCard({ call }: { call: LeanCall }) {
               alt={call.title}
               width={320}
               height={180}
-              className="w-full h-48 object-cover"
+              className="w-full h-56 object-cover"
             />
             {call.youtubeUrl !== '#' && (
               <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
