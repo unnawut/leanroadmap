@@ -48,7 +48,7 @@ export function Dashboard() {
               className="bg-white/80 backdrop-blur-sm border-slate-200/80 text-slate-600 px-3 py-1.5 text-xs font-mono-data shadow-sm"
             >
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse" />
-              Last updated: December 2025
+              Last updated: January 2026
             </Badge>
           </div>
         </div>
