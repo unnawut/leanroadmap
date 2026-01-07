@@ -58,7 +58,7 @@ export const xmssSeriesConfig = {
     color: '#2e86ab',
   },
   m4: {
-    label: 'M4 Max',
+    label: 'M4 Max (efficient)',
     color: '#ef4444',
   },
   m4vm: {
