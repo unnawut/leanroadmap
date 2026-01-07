@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Search, ChevronUp, ChevronDown } from 'lucide-react';
 import { Input } from '@/components/ui/primitives';
-import { ResearchTrackCard } from '@/components/ResearchTrackCard';
+import { ResearchTrackCard } from './ResearchTrackCard';
 import { researchTracksData } from '@/data/research-tracks';
 
 export function ResearchTracks() {

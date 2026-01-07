@@ -2,8 +2,8 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/primitives';
 import { benchmarksData } from '@/data/benchmarks';
-import { XmssAggregationChart } from '@/components/XmssAggregationChart';
-import { LeanSigTimingChart } from '@/components/LeanSigTimingChart';
+import { XmssAggregationChart } from './XmssAggregationChart';
+import { LeanSigTimingChart } from './LeanSigTimingChart';
 import { AnimatedValue } from '@/components/ui/AnimatedValue';
 import { Activity } from 'lucide-react';
 

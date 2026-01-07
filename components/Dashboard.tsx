@@ -3,15 +3,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Badge } from '@/components/ui/primitives';
-import { Benchmarks } from '@/components/Benchmarks';
-import { ClientImplementations } from '@/components/ClientImplementations';
-import { Devnets } from '@/components/Devnets';
-import { LeanCalls } from '@/components/LeanCalls';
-import { Timeline } from '@/components/Timeline';
+import { Benchmarks } from '@/components/benchmarks/Benchmarks';
+import { ClientImplementations } from '@/components/clients/ClientImplementations';
+import { Devnets } from '@/components/devnets/Devnets';
+import { LeanCalls } from '@/components/lean-calls/LeanCalls';
+import { Timeline } from '@/components/timeline/Timeline';
 import { Footer } from '@/components/Footer';
-import { ResearchTracks } from '@/components/ResearchTracks';
-import { Overview } from '@/components/Overview';
-import { KeyResources } from '@/components/KeyResources';
+import { ResearchTracks } from '@/components/research-tracks/ResearchTracks';
+import { Overview } from '@/components/overview/Overview';
+import { KeyResources } from '@/components/key-resources/KeyResources';
 
 const LAST_UPDATED = '2026-01';
 const formatDate = (date: string) =>

@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect, useCallback } from 'react';
 import { devnetsData } from '@/data/devnets';
-import { DevnetCard } from '@/components/DevnetCard';
+import { DevnetCard } from './DevnetCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function Devnets() {
