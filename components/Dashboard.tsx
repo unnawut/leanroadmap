@@ -36,7 +36,7 @@ export function Dashboard() {
         }`}
       >
         <div className="bg-slate-800/95 backdrop-blur-md border-b border-slate-700/60 shadow-lg">
-          <div className="container mx-auto px-8 md:px-6 py-3 flex items-center justify-between">
+          <div className="container mx-auto px-8 md:px-6 py-2 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="h-4 w-px bg-gradient-to-b from-teal-400 to-teal-300" />
               <div>
@@ -46,6 +46,25 @@ export function Dashboard() {
                 </h1>
               </div>
             </div>
+            <nav className="hidden md:flex items-center gap-1 ml-auto mr-4">
+              {[
+                { label: 'Overview', id: 'overview' },
+                { label: 'Timeline', id: 'timeline' },
+                { label: 'Benchmarks', id: 'benchmarks' },
+                { label: 'Devnets', id: 'devnets' },
+                { label: 'Research', id: 'research-tracks' },
+                { label: 'Clients', id: 'client-implementations' },
+                { label: 'Videos', id: 'lean-calls' },
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="px-3 py-1 text-xs text-slate-300 hover:text-white hover:bg-slate-700/50 rounded transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
             <span className="flex items-center text-[11px] text-slate-400 font-mono-data px-2.5 py-1 rounded-full border border-slate-600">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse" />
               {LAST_UPDATED}
@@ -95,36 +114,36 @@ export function Dashboard() {
         </div>
       </header>
 
-      <section className="space-y-4">
+      <section id="overview" className="space-y-4 scroll-mt-20">
         <h2>Overview</h2>
         <Overview />
       </section>
 
-      <section className="space-y-4">
+      <section id="timeline" className="space-y-4 scroll-mt-20">
         <h2>Timeline</h2>
         <Timeline />
       </section>
 
-      <section className="space-y-4">
+      <section id="benchmarks" className="space-y-4 scroll-mt-20">
         <h2>Benchmarks</h2>
         <Benchmarks />
       </section>
 
-      <section className="space-y-4">
+      <section id="devnets" className="space-y-4 scroll-mt-20">
         <h2>Devnets</h2>
         <Devnets />
       </section>
 
-      <section className="space-y-4">
+      <section id="research-tracks" className="space-y-4 scroll-mt-20">
         <ResearchTracks />
       </section>
 
-      <section className="space-y-4">
+      <section id="client-implementations" className="space-y-4 scroll-mt-20">
         <h2>Client Implementations</h2>
         <ClientImplementations />
       </section>
 
-      <section className="space-y-4">
+      <section id="lean-calls" className="space-y-4 scroll-mt-20">
         <h2>Lean Calls</h2>
         <LeanCalls />
       </section>
