@@ -1,7 +1,7 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/primitives';
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { keyResourcesData } from '@/data/key-resources';
 
 const getYear = (date: string): number => {
@@ -11,6 +11,34 @@ const getYear = (date: string): number => {
 const formatDate = (date: string): string => {
   return new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 };
+
+function TwitterTimeline() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://platform.twitter.com/widgets.js';
+    script.async = true;
+    containerRef.current?.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="h-[400px] overflow-y-auto">
+      <a
+        className="twitter-timeline"
+        data-height="400"
+        data-chrome="noheader nofooter noborders"
+        href="https://twitter.com/leanEthereum"
+      >
+        Loading tweets...
+      </a>
+    </div>
+  );
+}
 
 export function KeyResources() {
   return (
@@ -64,14 +92,7 @@ export function KeyResources() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <TwitterTimelineEmbed
-            sourceType="profile"
-            screenName="leanEthereum"
-            options={{ height: 400 }}
-            noHeader
-            noFooter
-            noBorders
-          />
+          <TwitterTimeline />
         </CardContent>
       </Card>
     </div>
