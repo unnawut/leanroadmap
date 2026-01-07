@@ -43,7 +43,7 @@ export const researchTracksData: ResearchTrack[] = [
     progress: 50,
     lead: 'Dmitry Khovratovich',
     leadLink: 'https://x.com/Khovr',
-    tags: ['Post-Quantum Signatures', 'Chain Snarkification'],
+    tags: ['Post-Quantum Signatures', 'Security'],
     milestones: [
       { title: 'Bounties established ($66k already earned)', completed: true, date: "Jan '25" },
       { title: 'Research grants (three recipients chosen)', completed: true, date: "Feb '25" },
@@ -105,7 +105,7 @@ export const researchTracksData: ResearchTrack[] = [
     progress: 70,
     lead: 'Benedikt Wagner',
     leadLink: 'https://benedikt-wagner.dev/',
-    tags: ['Post-Quantum Signatures'],
+    tags: ['Post-Quantum Signatures', 'Security'],
     milestones: [
       {
         title: 'Paper publication (including proofs) and prototype implementation',
@@ -173,7 +173,7 @@ export const researchTracksData: ResearchTrack[] = [
     progress: 50,
     lead: 'Thomas Coratger',
     leadLink: 'https://x.com/tcoratger',
-    tags: ['Post-Quantum Signatures', 'Chain Snarkification'],
+    tags: ['Post-Quantum Signatures'],
     milestones: [
       {
         title: 'Benchmark hash in SNARK (Plonky3, STwo, Binius, Hashcaster)',
@@ -262,7 +262,7 @@ export const researchTracksData: ResearchTrack[] = [
     progress: 40,
     lead: 'Alex Hicks',
     leadLink: 'https://x.com/alexanderlhicks',
-    tags: ['Security Hardening'],
+    tags: ['Security'],
     milestones: [
       { title: 'zkEVM formal verification project initiation', completed: true, date: "Jan '25" },
       { title: 'Lean 4 framework implementation', completed: false, date: "Mar '25" },
@@ -307,7 +307,7 @@ export const researchTracksData: ResearchTrack[] = [
     progress: 30,
     lead: 'Raúl Kripalani',
     leadLink: 'https://x.com/raulvk',
-    tags: ['Networking', 'Performance'],
+    tags: ['Scaling'],
     milestones: [
       {
         title: 'Practical Rateless Set Reconciliation research',
@@ -360,7 +360,7 @@ export const researchTracksData: ResearchTrack[] = [
     progress: 20,
     lead: 'TBD',
     leadLink: '',
-    tags: ['Consensus', 'Performance'],
+    tags: ['Consensus', 'Scaling'],
     milestones: [
       { title: 'Exploratory research', completed: false },
     ],
@@ -409,7 +409,7 @@ export const researchTracksData: ResearchTrack[] = [
     progress: 50,
     lead: 'Barnabé Monnot',
     leadLink: 'https://x.com/barnabemonnot',
-    tags: ['Consensus', 'Performance'],
+    tags: ['Consensus', 'Scaling'],
     milestones: [
       { title: 'Exploratory research', completed: false },
     ],
