@@ -55,6 +55,11 @@ export function Dashboard() {
       </header>
 
       <section className="space-y-4">
+        <h2>Overview</h2>
+        <Overview />
+      </section>
+
+      <section className="space-y-4">
         <h2>Timeline</h2>
         <Timeline />
       </section>
@@ -67,11 +72,6 @@ export function Dashboard() {
       <section className="space-y-4">
         <h2>Devnets</h2>
         <Devnets />
-      </section>
-
-      <section className="space-y-4">
-        <h2>Overview</h2>
-        <Overview />
       </section>
 
       <section className="space-y-4">
