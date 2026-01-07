@@ -28,13 +28,7 @@ export function Dashboard() {
   return (
     <div className="container mx-auto space-y-12 px-8 md:px-6">
       {/* Floating Header */}
-      <div
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-full pointer-events-none'
-        }`}
-      >
+      <div className="fixed top-0 left-0 right-0 z-50">
         <div className="bg-slate-800/95 backdrop-blur-md border-b border-slate-700/60 shadow-lg">
           <div className="container mx-auto px-8 md:px-6 py-2 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -74,7 +68,7 @@ export function Dashboard() {
       </div>
 
       {/* Hero Header */}
-      <header className="relative pt-2 md:pt-6">
+      <header className="relative pt-14 md:pt-16">
         {/* Decorative background element */}
         <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-teal-100/40 via-amber-50/30 to-transparent rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-amber-100/30 to-transparent rounded-full blur-2xl pointer-events-none" />
