@@ -1,10 +1,10 @@
-import { BookOpen, BarChart3, KeyRound, Package, Youtube, MessageCircle, Box, LucideIcon } from 'lucide-react';
+import { BookOpen, BarChart3, KeyRound, Package, Youtube, MessageCircle, LucideIcon } from 'lucide-react';
 
 export interface CallToAction {
   title: string;
   url: string;
   icon: LucideIcon;
-  type: 'repo' | 'community' | 'client';
+  type: 'repo' | 'community';
   description?: string;
 }
 
@@ -50,40 +50,5 @@ export const callToActionsData: CallToAction[] = [
     icon: MessageCircle,
     type: 'community',
     description: 'Join the #post-quantum channel',
-  },
-  {
-    title: 'Ream',
-    url: 'https://github.com/ReamLabs/ream',
-    icon: Box,
-    type: 'client',
-    description: 'Rust client by ReamLabs',
-  },
-  {
-    title: 'Zeam',
-    url: 'https://github.com/blockblaz/zeam',
-    icon: Box,
-    type: 'client',
-    description: 'Zig client by Blockblaz',
-  },
-  {
-    title: 'Qlean-mini',
-    url: 'https://github.com/qdrvm/qlean-mini',
-    icon: Box,
-    type: 'client',
-    description: 'C++ client by QDRVM',
-  },
-  {
-    title: 'Lantern',
-    url: 'https://github.com/Pier-Two/lantern',
-    icon: Box,
-    type: 'client',
-    description: 'Nim client by Pier Two',
-  },
-  {
-    title: 'Lighthouse',
-    url: 'https://github.com/hopinheimer/lighthouse',
-    icon: Box,
-    type: 'client',
-    description: 'Rust client fork by Hopinheimer',
   },
 ];

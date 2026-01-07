@@ -70,9 +70,7 @@ export function Overview() {
       {/* Call to Actions */}
       <div className="col-span-1 md:col-span-2">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {callToActionsData
-            .filter((cta) => cta.type !== 'client')
-            .map((cta, index) => (
+          {callToActionsData.map((cta, index) => (
               <a
                 key={index}
                 href={cta.url}

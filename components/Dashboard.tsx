@@ -2,7 +2,7 @@
 
 import { Badge } from '@/components/ui/primitives';
 import { Benchmarks } from '@/components/Benchmarks';
-import { ClientTeams } from '@/components/ClientTeams';
+import { ClientImplementations } from '@/components/ClientImplementations';
 import { Devnets } from '@/components/Devnets';
 import { LeanCalls } from '@/components/LeanCalls';
 import { Timeline } from '@/components/Timeline';
@@ -79,8 +79,8 @@ export function Dashboard() {
       </section>
 
       <section className="space-y-4">
-        <h2>Client Teams</h2>
-        <ClientTeams />
+        <h2>Client Implementations</h2>
+        <ClientImplementations />
       </section>
 
       <section className="space-y-4">
