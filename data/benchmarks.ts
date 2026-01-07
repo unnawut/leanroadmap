@@ -47,7 +47,7 @@ export const benchmarksData: BenchmarkCategory[] = [
         unit: 'μs',
       },
       {
-        label: 'Key genation time',
+        label: 'Key generation time',
         note: '10-core MacBook Pro; 8 years key lifetime',
         value: '3.5',
         unit: 'hours',
