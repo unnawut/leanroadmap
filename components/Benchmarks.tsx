@@ -2,6 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/primitives';
 import { benchmarksData } from '@/data/benchmarks';
+import { XmssAggregationChart } from '@/components/XmssAggregationChart';
 import { Activity } from 'lucide-react';
 
 export function Benchmarks() {
@@ -28,6 +29,11 @@ export function Benchmarks() {
             </div>
           </CardHeader>
           <CardContent>
+            {category.id === 'leanmultisig' && (
+              <div className="my-4 py-4 border-t border-slate-100">
+                <XmssAggregationChart />
+              </div>
+            )}
             <div className="space-y-3">
               {category.metrics.map((metric, index) => (
                 <div
