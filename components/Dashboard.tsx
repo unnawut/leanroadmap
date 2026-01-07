@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Badge } from '@/components/ui/primitives';
 import { Benchmarks } from '@/components/Benchmarks';
 import { ClientImplementations } from '@/components/ClientImplementations';
@@ -10,9 +11,49 @@ import { Footer } from '@/components/Footer';
 import { ResearchTracks } from '@/components/ResearchTracks';
 import { Overview } from '@/components/Overview';
 
+const LAST_UPDATED = 'January 2026';
+
 export function Dashboard() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="container mx-auto space-y-12 px-8 md:px-6">
+      {/* Floating Header */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 -translate-y-full pointer-events-none'
+        }`}
+      >
+        <div className="bg-slate-800/95 backdrop-blur-md border-b border-slate-700/60 shadow-lg">
+          <div className="container mx-auto px-8 md:px-6 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="h-4 w-px bg-gradient-to-b from-teal-400 to-teal-300" />
+              <div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">Lean Ethereum</div>
+                <h1 className="text-base font-medium text-white leading-tight">
+                  Lean Consensus <span className="font-display text-slate-400">R&D Progress</span>
+                </h1>
+              </div>
+            </div>
+            <span className="flex items-center text-[11px] text-slate-400 font-mono-data px-2.5 py-1 rounded-full border border-slate-600">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse" />
+              {LAST_UPDATED}
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Header */}
       <header className="relative pt-2 md:pt-6">
         {/* Decorative background element */}
@@ -48,7 +89,7 @@ export function Dashboard() {
               className="bg-white/80 backdrop-blur-sm border-slate-200/80 text-slate-600 px-3 py-1.5 text-xs font-mono-data shadow-sm"
             >
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse" />
-              Last updated: January 2026
+              Last updated: {LAST_UPDATED}
             </Badge>
           </div>
         </div>
