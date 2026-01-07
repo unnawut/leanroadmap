@@ -3,7 +3,31 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/primitives';
 import { benchmarksData } from '@/data/benchmarks';
 import { XmssAggregationChart } from '@/components/XmssAggregationChart';
+import { AnimatedValue } from '@/components/AnimatedValue';
 import { Activity } from 'lucide-react';
+
+function getPercentageColor(subValue: string, label: string): string {
+  // Extract percentage(s) from strings like "97% of target" or "312 - 390% of target"
+  const matches = subValue.match(/(\d+)/g);
+  if (!matches) return 'text-slate-400';
+
+  // Use the first (or only) percentage for color determination
+  const percent = parseInt(matches[0], 10);
+
+  // For size metrics, lower is better (being under target is good)
+  const lowerIsBetter = label.toLowerCase().includes('size');
+
+  if (lowerIsBetter) {
+    if (percent <= 100) return 'text-emerald-600';
+    if (percent <= 150) return 'text-amber-600';
+    return 'text-red-500';
+  }
+
+  // For other metrics (speed), higher is better
+  if (percent > 100) return 'text-emerald-600';
+  if (percent >= 70) return 'text-amber-600';
+  return 'text-red-500';
+}
 
 export function Benchmarks() {
   return (
@@ -50,19 +74,18 @@ export function Benchmarks() {
                   </div>
                   <div className="flex flex-col items-end shrink-0 ml-4">
                     <div className="flex items-baseline gap-1">
-                      <span
+                      <AnimatedValue
+                        value={metric.value}
                         className={`font-mono-data text-lg ${
                           metric.highlight ? 'font-bold text-teal-600' : 'font-semibold text-slate-800'
                         }`}
-                      >
-                        {metric.value}
-                      </span>
+                      />
                       {metric.unit && (
                         <span className="text-xs text-slate-500">{metric.unit}</span>
                       )}
                     </div>
                     {metric.subValue && (
-                      <span className="text-[10px] text-slate-400">{metric.subValue}</span>
+                      <span className={`text-[10px] ${getPercentageColor(metric.subValue, metric.label)}`}>{metric.subValue}</span>
                     )}
                   </div>
                 </div>

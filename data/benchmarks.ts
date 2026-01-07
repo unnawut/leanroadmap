@@ -101,12 +101,14 @@ export const benchmarksData: BenchmarkCategory[] = [
       },
       {
         label: 'Aggregate size (Efficient)',
+        note: 'main branch; optimized for prover efficiency',
         value: `~${aggregateSize.efficient.min} - ${aggregateSize.efficient.max}`,
         unit: 'KiB',
         subValue: `${Math.round((aggregateSize.efficient.min / AGGREGATE_SIZE_TARGET) * 100)} - ${Math.round((aggregateSize.efficient.max / AGGREGATE_SIZE_TARGET) * 100)}% of target`,
       },
       {
         label: 'Aggregate size (Simple)',
+        note: 'lean-vm-simple branch; optimized for simplicity',
         value: `~${aggregateSize.simple}`,
         unit: 'KiB',
         subValue: `${Math.round((aggregateSize.simple / AGGREGATE_SIZE_TARGET) * 100)}% of target`,
