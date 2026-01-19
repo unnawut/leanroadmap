@@ -31,8 +31,8 @@ export function Overview() {
             <li className="flex items-start">
               <Rocket className="h-4 w-4 mr-2 text-slate-500 mt-0.5 flex-shrink-0" />
               <span>
-                <strong>Lean Governance:</strong> Strategic bundling of protocol upgrades — 
-                enabling efficient implementation of complementary technical improvements
+                <strong>Lean Governance:</strong> Strategic bundling of protocol upgrades — enabling
+                efficient implementation of complementary technical improvements
               </span>
             </li>
             <li className="flex items-start">
